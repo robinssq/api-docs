@@ -1,3 +1,17 @@
+# These are the requirements for building our documentation, both locally
+# and on Read the Docs. Read the Docs builds must be configured to use
+# this file, as part of the "Advanced Settings" for our project:
+#   https://readthedocs.org/dashboard/bam-x/advanced/
+#
+# Note that Read the Docs already provides a default sphinx build environment,
+# but we do not use it because it contains some outdated and buggy packages --
+# https://github.com/rtfd/readthedocs.org/issues/2398
+#
+# If you need to update these requirements:
+#   1. Add any new packages to `requirements-unpinned.txt`
+#   2. Run `pip install -r requirements-unpinned.txt`
+#   3. Update this file with the output of `pip freeze`
+
 alabaster==0.7.10
 argh==0.26.2
 Babel==2.4.0
@@ -10,7 +24,7 @@ Jinja2==2.9.6
 livereload==2.5.1
 MarkupSafe==1.0
 pathtools==0.1.2
-pkg-resources==0.0.0
+# pkg-resources==0.0.0  # not a real package -- https://github.com/pypa/pip/issues/4022
 port-for==0.3.1
 Pygments==2.2.0
 pytz==2017.2
