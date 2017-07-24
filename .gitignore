@@ -1,0 +1,11 @@
+# general stuff
+*.swp
+*.swo
+*.DS_Store
+.directory
+
+# pycharm
+.idea/
+
+# sphinx
+docs/_build
