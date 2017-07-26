@@ -1,6 +1,7 @@
 # BAM API Documentation
 
-![build status](https://readthedocs.org/projects/bam-x/badge/?version=latest)
+[![build status](https://readthedocs.org/projects/bam-x/badge/?version=latest)
+](https://readthedocs.org/projects/bam-x/)
 
 
 ## Local Development Workflow
@@ -28,7 +29,14 @@ To delete the build directory and start fresh:
 make docker-sphinx-clean
 ```
 
+
+## Code Style
+
 Write your documentation in reStructuredText, or possibly markdown.
+
+For reStructuredText, please follow the [Python documentation style guide
+](https://docs.python.org/devguide/documenting.html#style-guide) .
+Files should be indented using 3 spaces (except for code blocks).
 
 
 ## Reading the Docs
