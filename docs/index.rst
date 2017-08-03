@@ -1,14 +1,17 @@
-.. Bam API documentation master file, created by
+.. Narrativ API documentation master file, created by
    sphinx-quickstart on Mon Jul 24 11:48:40 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Bam API Developer Documentation
-===============================
+Narrativ API Developer Documentation
+====================================
 
-The Bam API provides a simple way for your custom applications to access and
-manage your Bam account. It is available at https://api.bam-x.com/ . Create an
-:doc:`API key <auth>` to get started or browse the full documentation below:
+At `Narrativ`_, we transform real content into organic ads that are not
+impacted by AdBlock. Our goal is to lift publisher revenues from organic
+content through real-time bidding and machine learning solutions. The
+Narrativ API allows you to access our technology without having editors
+create manual links. Create an :doc:`API key <auth>` to get started or
+browse the full documentation below:
 
 .. toctree::
    :maxdepth: 2
@@ -31,3 +34,14 @@ manage your Bam account. It is available at https://api.bam-x.com/ . Create an
    * :ref:`genindex`
    * :ref:`modindex`
    * :ref:`search`
+
+
+Support
+-------
+
+Need additional help? Feel free to `reach out`_ with any questions on
+integration or Narrativ's content marketing platform!
+
+
+.. _Narrativ: https://narrativ.com/
+.. _reach out: mailto:hello@narrativ.com

@@ -4,7 +4,7 @@ Sending and Receiving Data
 Data formats
 ------------
 
-The API is accessed via HTTPS at https://api.bam-x.com/ . Use JSON when
+The API is accessed via HTTPS at https://api.narrativ.com/ . Use JSON when
 sending data to API endpoints that require it. Remember to specify
 ``Content-Type: application/json`` in the request headers.
 

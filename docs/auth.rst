@@ -4,19 +4,19 @@ API Authentication
 Creating an API key
 -------------------
 
-To use the Bam API, you will need to create an API key for your user account.
+To use the Narrativ API, you will need to create an API key for your user account.
 Navigate to the `Developer Options`_ page and follow the directions there.
 
 
 Using your API key
 ------------------
 
-All Bam API requests must include a valid API key. Send your API key in the
+All Narrativ API requests must include a valid API key. Send your API key in the
 HTTP ``Authorization`` header, prefixed with the scheme ``BAMX-API-KEY``.
 For example::
 
     curl -i -H 'Authorization: BAMX-API-KEY Sy8xLzE2MTE3MDIxNzY3NDM0OTc0MDcv' \
-        https://api.bam-x.com/api/v1/tokeninfo/
+        https://api.narrativ.com/api/v1/tokeninfo/
 
 ::
 
@@ -45,7 +45,7 @@ For example::
 If a valid API key is not sent, the server will return an HTTP 401 error::
 
     curl -i -H 'Authorization: BAMX-API-KEY TestInvalidAPIKey' \
-        https://api.bam-x.com/api/v1/tokeninfo/
+        https://api.narrativ.com/api/v1/tokeninfo/
 
 ::
 
@@ -69,7 +69,7 @@ Keeping your account secure
 ---------------------------
 
 Remember to keep your API key secret, since anyone who has it can use it to
-access your Bam account. If you ever lose your API key, you can visit the
+access your Narrativ account. If you ever lose your API key, you can visit the
 `Developer Options`_ page to disable it and create a new one.
 
-.. _Developer Options: https://bam-x.com/#/account/developer
+.. _Developer Options: https://narrativ.com/#/account/developer
