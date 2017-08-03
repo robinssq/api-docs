@@ -1,7 +1,7 @@
 # These are the requirements for building our documentation, both locally
 # and on Read the Docs. Read the Docs builds must be configured to use
 # this file, as part of the "Advanced Settings" for our project:
-#   https://readthedocs.org/dashboard/bam-x/advanced/
+#   https://readthedocs.com/dashboard/narrativ-narrativ/advanced/
 #
 # Note that Read the Docs already provides a default sphinx build environment,
 # but we do not use it because it contains some outdated and buggy packages --
