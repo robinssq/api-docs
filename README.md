@@ -1,7 +1,7 @@
-# BAM API Documentation
+# Narrativ API Documentation
 
-[![build status](https://readthedocs.org/projects/bam-x/badge/?version=latest)
-](https://readthedocs.org/projects/bam-x/)
+[![build status](https://readthedocs.com/projects/narrativ-narrativ/badge/?version=latest)
+](https://readthedocs.com/projects/narrativ-narrativ/)
 
 
 ## Local Development Workflow
@@ -43,10 +43,10 @@ Files should be indented using 3 spaces (except for code blocks).
 
 Once your pull request is merged into master, an automated build will
 be triggered on Read the Docs. Check the status of your build on our
-[project page](https://readthedocs.org/projects/bam-x/builds/) .
+[project page](https://readthedocs.com/projects/narrativ-narrativ/builds/) .
 
-Then, view your documentation on https://bam-x.readthedocs.io/en/latest/
-or on http://docs.bam-x.com/en/latest/
+Then, view your documentation on https://narrativ-narrativ.readthedocs-hosted.com/
+or on http://docs.narrativ.com/
 
 
 ## Releasing a New Version

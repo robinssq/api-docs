@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Bam API documentation build configuration file, created by
+# Narrativ API documentation build configuration file, created by
 # sphinx-quickstart on Mon Jul 24 11:48:40 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -45,9 +45,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Bam API'
-copyright = '2017, BAM-X, Inc.'
-author = 'Bam Support'
+project = 'Narrativ API'
+copyright = '2017, Narrativ AI, Inc.'
+author = 'Narrativ'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -123,7 +123,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'BamAPIdoc'
+htmlhelp_basename = 'NarrativAPIdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -150,8 +150,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'BamAPI.tex', 'Bam API Documentation',
-     'Bam Support', 'manual'),
+    (master_doc, 'NarrativAPI.tex', 'Narrativ API Documentation',
+     author, 'manual'),
 ]
 
 
@@ -160,7 +160,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'bamapi', 'Bam API Documentation',
+    (master_doc, 'narrativapi', 'Narrativ API Documentation',
      [author], 1)
 ]
 
@@ -171,8 +171,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'BamAPI', 'Bam API Documentation',
-     author, 'BamAPI', 'One line description of project.',
+    (master_doc, 'NarrativAPI', 'Narrativ API Documentation',
+     author, 'NarrativAPI', 'One line description of project.',
      'Miscellaneous'),
 ]
 
