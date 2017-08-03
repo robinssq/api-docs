@@ -70,7 +70,7 @@ Example
 
 ::
 
-    curl -i -H 'Authorization: BAMX-API-KEY Sy8xLzE2MTE3MDIxNzY3NDM0OTc0MDcv' \
+    curl -i -H 'Authorization: NRTV-API-KEY Sy8xLzE2MTE3MDIxNzY3NDM0OTc0MDcv' \
         -H 'Content-Type: application/json' \
         -d '{"url": "https://www.google.com/",
              "article_name": "Top Ten Search Engines",
