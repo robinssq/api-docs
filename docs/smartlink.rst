@@ -40,11 +40,34 @@ Request
 
    * - channel
      - string
-     - Optional. The name of the advertising channel, used for grouping data in reports.
+     - Optional. The name of the :ref:`advertising channel <channels>`, used for grouping data in reports.
 
    * - exclusive_match_requested
      - boolean
      - Optional. If true, lock this SmartLink to the original merchant. Default false.
+
+
+.. _channels:
+
+.. list-table::
+   :header-rows: 1
+
+   * - Channel Name
+
+   * - Site
+
+   * - Newsletter
+
+   * - Facebook
+
+   * - Instagram
+
+   * - Twitter
+
+   * - YouTube
+
+   * - Other
+
 
 Response
 ^^^^^^^^
@@ -57,11 +80,11 @@ Response
      - Type
      - Description
 
-   * - smart_link.smart_link_id
+   * - smart_link_id
      - integer
      - A unique identifier for the SmartLink that was created.
 
-   * - smart_link.smart_link_url
+   * - smart_link_url
      - string
      - The URL of the SmartLink, which should be substituted for the original link in your article.
 
@@ -92,6 +115,15 @@ Example
       },
       "data": [
         {
+          "smart_link_id": 2554,
+          "auction_id": 1611792246540568252,
+          "uid_created": 2,
+          "datetime_created": "2017-07-26T19:48:25Z",
+          "pub_id": 1,
+          "url": "https://www.google.com/",
+          "channel": "Newsletter",
+          "exclusive_match_requested": true,
+          "smart_link_url": "http://shop-links.co/1611792246540568252",
           "article": {
             "article_id": 2536,
             "uid": 2,
@@ -101,18 +133,6 @@ Example
             "datetime_created": "2017-07-26T19:48:25Z",
             "datetime_updated": "2017-07-26T19:48:25Z",
             "name": "Top Ten Search Engines"
-          },
-          "smart_link": {
-            "smart_link_id": 2554,
-            "auction_id": 1611792246540568252,
-            "uid_created": 2,
-            "datetime_created": "2017-07-26T19:48:25Z",
-            "pub_id": 1,
-            "url": "https://www.google.com/",
-            "article_id": 2536,
-            "channel": "Newsletter",
-            "exclusive_match_requested": true,
-            "smart_link_url": "http://shop-links.co/1611792246540568252"
           }
         }
       ]
