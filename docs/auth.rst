@@ -72,4 +72,4 @@ Remember to keep your API key secret, since anyone who has it can use it to
 access your Narrativ account. If you ever lose your API key, you can visit the
 `Developer Options`_ page to disable it and create a new one.
 
-.. _Developer Options: https://narrativ.com/#/account/developer
+.. _Developer Options: https://dashboard.narrativ.com/#/account/developer
