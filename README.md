@@ -51,4 +51,6 @@ or on http://docs.narrativ.com/
 
 ## Releasing a New Version
 
+Update the version number in `docs/conf.py` .
+
 Releases are managed using Github tags. Use semantic versioning.
