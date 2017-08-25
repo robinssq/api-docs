@@ -123,7 +123,7 @@ Example
           "url": "https://www.google.com/",
           "channel": "Newsletter",
           "exclusive_match_requested": true,
-          "smart_link_url": "http://shop-links.co/1611792246540568252",
+          "smart_link_url": "https://shop-links.co/1611792246540568252",
           "article": {
             "article_id": 2536,
             "uid": 2,
