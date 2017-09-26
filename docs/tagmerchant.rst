@@ -162,11 +162,11 @@ The page view tag goes on every page except the checkout page. Remember to chang
 
    * - user_email
      - string
-     - The user's email address (this will be hashed before being stored - Narrativ does not store PII)
+     - Optional. The user's email address (this will be hashed before being stored - Narrativ does not store PII)
 
    * - user_id
      - string
-     - The ID the user has in your system, if available.
+     - Optional. The ID the user has in your system, if available.
 
 What you see below is another example. You cannot copy and paste it as is. Insert the page view
 information into our data layer using Javascript before loading the Narrativ tag.
