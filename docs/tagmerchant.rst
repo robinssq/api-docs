@@ -4,22 +4,25 @@ Narrativ Advertiser Tag
 Functionality
 ------------
 
-The Narrativ advertiser tag allows Narrativ to track user behavior on an advertiser's site. By looking at their
-pageviews and purchase behavior, our AI can better optimize the behavior of our auction system and report on its
-effect. Any PII that is captured such as names, email addresses, or anything of the sort will be hashed and never
-stored in plain text. The tag runs asynchronously in the background to avoid impacting page load times.
+The Narrativ advertiser tag allows Narrativ to track user behavior on an advertiser's site. Our AI optimizes
+Narrativ's auction system by looking at data on page views and purchase behavior. Any other PII that is
+captured, such as names, email addresses, etc. will be hashed and never stored in plain text. The tag runs
+asynchronously in the background so there is no impact to page load times.
 
 Implementation
 ------------
 
-Our system currently tracks two types of events- page views and checkouts. The checkout tag should be loaded on a
-"Thank you for your order" type page- after they have finished checking out and paying. The page view tag should be
-loaded on every other page- allowing us to track the user's journey to checkout as well as what products they are
-looking at. The Javascript snippet should be placed before the closing </head> tag in your HTML.
-In all snippets below the string "ADVERTISER NAME" should be replaced with your Narrativ account name- please ask your
-representative if you do not know what that is.
+We track two types of events for our partners - check outs and page views
 
-Checkout Tag
+* Place the check out tag on the page that loads after your customer has finished shopping and paid
+  for their purchase (your site's equivalent of a "Thank you for your order" page).
+
+* Place the page view tag on every other page that loads during your user's journey, so that we can
+  empower you with data on what products they are looking at before they check out.
+  Important! Replace "ACCOUNT NAME" with your Narrativ account name in all snippets. Reach out to
+  hello@narrativ.com for help with your Narrativ account name as needed.
+
+Adding Information About Your Checkout Page
 ------------
 
 
@@ -27,7 +30,7 @@ For checkout events, you have to fill in some information about the checkout bef
 done by inserting the relevant data into a variable called window.BAMX_EVENT_DATA. If a field is optional, you can
 just leave it out if you choose not to include the data.
 
-window.BAMX_EVENT_DATA
+*window.BAMX_EVENT_DATA*
 
 .. list-table::
    :widths: 30 10 60
@@ -39,7 +42,7 @@ window.BAMX_EVENT_DATA
 
    * - user_email
      - string
-     - The user's email address (this will be hashed before being stored - Narrativ does not store PII)
+     - Optional. The user's email address (this will be hashed before being stored - Narrativ does not store PII)
 
    * - page_type
      - string
@@ -65,7 +68,7 @@ window.BAMX_EVENT_DATA
      - array
      - Required. An array of Product objects representing the purchased items, as defined below.
 
-Product
+*Product*
 
 .. list-table::
    :widths: 30 10 60
@@ -96,9 +99,10 @@ Product
      - Required. The number of this product purchased in this order.
 
 Full Example (remember, replace ACCOUNT NAME with your account name)
-Also - this is just an example, you can't copy and paste it as is. You need to insert
-the checkout data from your page into our data layer using javascript before loading
-the Narrativ tag.
+
+What you see below is just an example. You cannot copy and paste it as is. Insert the check out
+information from your own page into our data layer using Javascript before loading the Narrativ tag.
+
 ::
 
     <!-- begin NARRATIV jstag -->
@@ -141,12 +145,12 @@ the Narrativ tag.
     <!-- end NARRATIV jstag -->
 
 
-Page View Tag
+Adding Information for the Page View Tag
 ------------
 
-The page view tag goes on every page except the checkout page. Remember to change ADVERTISER NAME to your account name.
+The page view tag goes on every page except the checkout page. Remember to change ACCOUNT NAME to your account name.
 
-window.BAMX_EVENT_DATA
+*window.BAMX_EVENT_DATA*
 
 .. list-table::
    :widths: 30 10 60
@@ -164,6 +168,8 @@ window.BAMX_EVENT_DATA
      - string
      - The ID the user has in your system, if available.
 
+What you see below is another example. You cannot copy and paste it as is. Insert the page view
+information into our data layer using Javascript before loading the Narrativ tag.
 
 ::
 
@@ -182,7 +188,7 @@ window.BAMX_EVENT_DATA
                 var a = document.getElementsByTagName("script")[0];
                 a.parentNode.insertBefore(b, a);
             } catch (e) {}
-        }("ADVERTISER NAME"));
+        }("ACCOUNT NAME"));
     </script>
     <!-- end NARRATIV jstag -->
 
