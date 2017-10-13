@@ -4,15 +4,14 @@ Narrativ Advertiser Tag
 Functionality
 ------------
 
-The Narrativ advertiser tag allows Narrativ to track user behavior on an advertiser's site. Our AI optimizes
-Narrativ's auction system by looking at data on page views and purchase behavior. Any other PII that is
+The Narrativ advertiser tag allows Narrativ to track user behavior on an advertiser's site. Our auction system optimizes advertiser acquisition and ROI by analyzing data on page views and purchase behavior. Any other PII that is
 captured, such as names, email addresses, etc. will be hashed and never stored in plain text. The tag runs
 asynchronously in the background so there is no impact to page load times.
 
 Implementation
 ------------
 
-We track two types of events for our partners - check outs and page views
+We track two types of events for our partners - check outs and page views:
 
 * Place the check out tag on the page that loads after your customer has finished shopping and paid
   for their purchase (your site's equivalent of a "Thank you for your order" page).
