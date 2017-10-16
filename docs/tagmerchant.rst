@@ -229,7 +229,7 @@ Below is a walkthrough for implementing the Narrativ pixel using a "Custom HTML"
 Start by navigating to your Google Tag Manager Dashboard.
 
 
-- Select "Tap Configuration" to begin making a new pixel.
+- Select "Tag Configuration" to begin making a new pixel.
 
 .. image:: _static/pixel_implementation_screenshots/1_tap_configuration.png
 
