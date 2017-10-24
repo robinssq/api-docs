@@ -11,7 +11,7 @@ Step 2. Create a New SmartShop
 
 Click **+ Create New SmartShop** or simply click on an existing shop to make edits.
 
-.. image:: _static/Instructions/Builder1.png
+.. image:: _static/builder_instructions/Builder1.png
 
 Step 3. Type in a SmartShop name and Edit name
 ----------------
@@ -32,14 +32,14 @@ Step 4. Choose a format
 
 Click on a format that best fits your story.
 
-.. image:: _static/Instructions/Builder2.png
+.. image:: _static/builder_instructions/Builder2.png
 
 Step 5. Add products to your SmartShop
 ----------------
 
 Click the box that says **Add Products**
 
-.. image:: _static/Instructions/Builder3.png
+.. image:: _static/builder_instructions/Builder3.png
 
 Step 6. Enter product information
 ----------------
@@ -61,7 +61,7 @@ Preview your SmartShop using the mobile preview screen on the right hand side. T
 
 Preview screen let’s you see the scroll function and if you hover over products you will also see the met data that will be displayed.
 
-.. image:: _static/Instructions/Builder4.png
+.. image:: _static/builder_instructions/Builder4.png
 
 **Note: You can click on the arrows next to product number to re-order the products in the box**
 
@@ -81,7 +81,7 @@ Step 9. Hit Publish
 
 Select the blue Publish button in the top right corner to save your changes and create code for the unit that you will drop into your CMS
 
-  .. image:: _static/Instructions/Builder5.png
+  .. image:: _static/builder_instructions/Builder5.png
 
 Step 10. Select the code type you want to drop into your CMS
 ----------------
