@@ -6,7 +6,7 @@ Step 1. Select a product
 
 Navigate to any merchant that sells the product you want to SmartLink and click the Narrativ extension button.
 
-.. image:: _static/Instructions/5.png
+.. image:: _static/instructions/5.png
 
 Step 2. Associate the product link with the story name
 ----------------
@@ -18,14 +18,14 @@ You can do this in one of two ways:
   - Type article name and date next to the gold “+” button, then click SMARTLINK to create a link.
   - (Note: Match the article title verbatim to your site, e.g., “The 15 Best Eye Creams 8/29/17”)
 
-.. image:: _static/Instructions/7.png
+.. image:: _static/instructions/7.png
 
 **2. Select from the list of existing articles**
 
   - Scroll through the drop down box and click SMARTLINK next to the article where you want to generate a link.
   - (Note:  Distinguish links for newsletters by naming your newsletter edits  “Newsletter Date Month”. This is the only way we can correctly attribute orders to the right channel.)
 
-.. image:: _static/Instructions/6.png
+.. image:: _static/instructions/6.png
 
 Step 3. Select Dynamic or Exclusive link
 ----------------
@@ -35,8 +35,8 @@ Need to ensure the link only goes to one destination?
   - To make the link exclusive to your selected merchant for a direct sales deal, click the lock icon.
   - Note that doing this will prevent us from being able to optimize your revenue and replace out of stock links.
 
-.. image:: _static/Instructions/Dynamic.png
-.. image:: _static/Instructions/Exclusive.png
+.. image:: _static/instructions/Dynamic.png
+.. image:: _static/instructions/Exclusive.png
 
 Step 4. Create your SmartLink
 ----------------
@@ -45,7 +45,7 @@ Step 4. Create your SmartLink
   - Type the line you want to hyperlink in your CMS (e.g. “Shop Now”).
   - Paste the SmartLink into your hyperlink.
 
-.. image:: _static/Instructions/8.png
+.. image:: _static/instructions/8.png
 
 SmartLink Naming Conventions
 ================
