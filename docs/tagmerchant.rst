@@ -141,38 +141,6 @@ information from your own page into our data layer using Javascript before loadi
     </script>
     <!-- end NARRATIV jstag -->
 
-Below is an example of a snippet that uses a minimum purchased checkout tag. This is used if you do not store order information in your data layer.
-
-::
-
-  <!-- begin NARRATIV jstag -->
-  <script type="text/javascript">
-      var minimumPurchased = [{
-          product_price = {{ItemPrice}},
-          product_quantity = 1
-      }]
-      window.BAMX_EVENT_DATA = {
-          page_type: 'checkout',
-          user_id: {{UserID}},
-          is_new_visitor: {{RegisteredCustomer}},
-          products_purchased: minimumPurchased,
-          order_id: {{OrderID}},
-          order_value: {{ItemPrice}},
-          currency: {{CurrencyCode}}
-      };
-      (function (account) {
-          try {
-            var b = document.createElement("script");
-            b.type = "text/javascript";
-            b.src = "//static.narrativ.com/tags/" + account + ".js";
-            b.async = true;
-            var a = document.getElementsByTagName("script")[0];
-            a.parentNode.insertBefore(b, a);
-          } catch (e) {}
-      }("ACCOUNT NAME"));
-  </script>
-  <!-- end NARRATIV jstag -->
-
 
 Adding Information for the Page View Tag
 ------------
@@ -250,15 +218,11 @@ Start by navigating to your Google Tag Manager Dashboard.
 
 - For the "Check Out Pixel", create a new tag and open the text field.
 
-.. image:: _static/pixel_implementation_screenshots/checkout_1_open_configuration.png
+.. image:: _static/pixel_implementation_screenshots/checkout_1_open_editor.png
 
 - This example is using a dummy data layer. You will have to customize "var purchased" to point at how you access the order content in your data layer.
 
 .. image:: _static/pixel_implementation_screenshots/checkout_2_confirm_code_product_info.png
-
-- If you do not have checkout product information available in your data layer then use "var minimumPurchased" instead and set it equal to the price of the checkout.
-
-.. image:: _static/pixel_implementation_screenshots/checkout_2.1_confirm_code_minimum_purchased.png
 
 - Add box under "Triggering" to add a trigger for this tag.
 
