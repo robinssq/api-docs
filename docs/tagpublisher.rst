@@ -1,15 +1,15 @@
 Narrativ Publisher Tag
-====================================
+======================
 
 Functionality
-------------
+-------------
 
 The Narrativ publisher tag does two main things. First, it will find any SmartLinks on the page and run
 the auctions, allowing the destination of the links to be updated ahead of time. Second, it will track user behavior
 such as SmartLink impressions and clicks.
 
 Implementation
-------------
+--------------
 
 Getting the publisher tag to run successfully is a simple process. Copy and paste the following Javascript snippet
 in the HEAD section of all your site's pages.

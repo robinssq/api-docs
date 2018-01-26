@@ -1,15 +1,15 @@
 How to Use Narrativ Chrome Extension
-================
+====================================
 
 Step 1. Select a product
-----------------
+------------------------
 
 Navigate to any merchant that sells the product you want to SmartLink and click the Narrativ extension button.
 
 .. image:: _static/extension_instructions/5.png
 
 Step 2. Associate the product link with the story name
-----------------
+------------------------------------------------------
 
 You can do this in one of two ways:
 
@@ -28,7 +28,7 @@ You can do this in one of two ways:
 .. image:: _static/extension_instructions/6.png
 
 Step 3. Select Dynamic or Exclusive link
-----------------
+----------------------------------------
 
 Need to ensure the link only goes to one destination?
 
@@ -39,7 +39,7 @@ Need to ensure the link only goes to one destination?
 .. image:: _static/extension_instructions/Exclusive.png
 
 Step 4. Create your SmartLink
-----------------
+-----------------------------
 
   - Once you have clicked the blue SMARTLINK button, the link will automatically copy to your clipboard, and is ready for use in your content.
   - Type the line you want to hyperlink in your CMS (e.g. “Shop Now”).
@@ -48,7 +48,7 @@ Step 4. Create your SmartLink
 .. image:: _static/extension_instructions/8.png
 
 SmartLink Naming Conventions
-================
+============================
 
 **1. Edit Name**
 

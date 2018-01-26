@@ -1,15 +1,15 @@
 Narrativ Advertiser Tag
-====================================
+=======================
 
 Functionality
-------------
+-------------
 
 The Narrativ advertiser tag allows Narrativ to track user behavior on an advertiser's site. Our auction system optimizes advertiser acquisition and ROI by analyzing data on page views and purchase behavior. Any other PII that is
 captured, such as names, email addresses, etc. will be hashed and never stored in plain text. The tag runs
 asynchronously in the background so there is no impact to page load times.
 
 Implementation
-------------
+--------------
 
 We track two types of events for our partners - check outs and page views:
 
@@ -22,7 +22,7 @@ We track two types of events for our partners - check outs and page views:
   hello@narrativ.com for help with your Narrativ account name as needed.
 
 Adding Information About Your Checkout Page
-------------
+-------------------------------------------
 
 
 For checkout events, you have to fill in some information about the checkout before loading our Javascript. This is
@@ -143,7 +143,7 @@ information from your own page into our data layer using Javascript before loadi
 
 
 Adding Information for the Page View Tag
-------------
+----------------------------------------
 
 The page view tag goes on every page except the checkout page. Remember to change "ACCOUNT NAME" to your Narrativ account name.
 
@@ -190,7 +190,7 @@ information into our data layer using Javascript before loading the Narrativ tag
   <!-- end NARRATIV jstag -->
 
 Google Tag Manager Walkthrough
-------------
+------------------------------
 
 Below is a walkthrough for implementing the Narrativ pixel using a "Custom HTML" tag in Google Tag Manager.
 Start by navigating to your Google Tag Manager Dashboard.
