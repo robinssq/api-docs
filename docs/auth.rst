@@ -11,8 +11,9 @@ Navigate to the `Developer Options`_ page and follow the directions there.
 Using your API key
 ------------------
 
-All Narrativ API requests must include a valid API key. Send your API key in the
-HTTP ``Authorization`` header, prefixed with the scheme ``NRTV-API-KEY``.
+Unless otherwise indicated, Narrativ API requests must include a valid
+API key. Send your API key in the HTTP ``Authorization`` header, prefixed
+with the scheme ``NRTV-API-KEY``.
 For example::
 
     curl -i -H 'Authorization: NRTV-API-KEY Sy8xLzE2MTE3MDIxNzY3NDM0OTc0MDcv' \
