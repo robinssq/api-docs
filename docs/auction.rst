@@ -32,7 +32,7 @@ Request
      - Description
 
    * - a
-     - int64
+     - string
      - Auction ID. This is the number at the end of your SmartLink.
        For example, the SmartLink ``https://shop-links.co/1522995078114976993``
        has the Auction ID ``1522995078114976993``.
@@ -67,7 +67,7 @@ Auction result data
      - Description
 
    * - auction_result . **id**
-     - int64
+     - string
      - A unique identifier for the result of the auction.
 
    * - auction_result . **product**
