@@ -42,15 +42,18 @@ Pages with Existing SmartLinks
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Next, your tag must identify the SmartLinks in your article which need to
-have their destination URLs updated. All SmartLinks use one of the following
-formats::
+have their destination URLs updated. All SmartLinks have the following
+format::
 
-    https://shop-edits.co/<auction_id>
     https://shop-links.co/<auction_id>
+
+.. NOTE: Custom publisher tags should ignore shop-edits. Bam boxes have
+   their own embedded tag independent from the publisher page tag (since
+   bam boxes are loaded in iframes). We also omit information about the
+   legacy bam link formats `#bamx-` and `#bamx:`.
 
 For example::
 
-    https://shop-edits.co/1611792246540568252
     https://shop-links.co/1611792246540568252
 
 Each SmartLink has an **Auction ID**, a unique 64-bit integer identifying
@@ -98,7 +101,7 @@ request to obtain the new destination URL. For example::
 Then, replace the ``href`` of your link with the new URL. So, an original
 link that looks like this::
 
-    <a href="https://shop-links.co/1522995078114976993/" target="_blank">Shop Now</a>
+    <a href="https://shop-links.co/1522995078114976993" target="_blank">Shop Now</a>
 
 will become::
 
@@ -158,48 +161,8 @@ Impression trackers should be fired immediately, while viewable impression
 trackers should be fired once any occurrence of the SmartLink on the page
 is scrolled into view.
 
-If your SmartLink is contained within a SmartShop unit (formerly known as a
-"Bam Box"), the API response may contain a set of SmartShop trackers::
-
-    GET https://api.bam-x.com/api/v1/auction/
-            ?a=1522995078114976993
-            &t=1517261651
-            &uuid=8132ac19-109a-466e-8037-540a9bd12798
-            &bam_box_id=1234
-            &bam_box_page_num=0
-            &bam_box_product_position=0
-
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-
-    {
-      "info": {
-        "error": false,
-        "status": 200
-      },
-      "data": [
-        {
-          "auction_result": {
-            "tracker_urls": {
-              "bam_box_viewable_impression": [
-                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=bv;ord={RAND};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?"
-              ],
-              "bam_box_impression": [
-                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=bi;ord={RAND};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?"
-              ]
-            },
-            "id": "1629147433127336253",
-            "auction_id": "1522995078114976993",
-            "redirect_url": "https://api.bam-x.com/api/v1/redirect/?a=1522995078114976993&uid_bam=1629147432580451822&ar=1629147433127336253&url=http%3A%2F%2Fwww.shopbop.com.example%2Fkarda-lace-bootie-iro%2Fvp%2Fv%3D1%2F1533877648.htm%3Fsite_refer%3Dbam%26utm_source%3Dbam%26utm_medium%3Dcpc%26utm_campaign%3Dbam%2Bpremium%2Beditorial%26&uuid=8132ac19-109a-466e-8037-540a9bd12798"
-          }
-        }
-      ]
-    }
-
-SmartShop impression trackers should be fired once the entire SmartShop unit
-is loaded on the page. SmartShop viewable impression trackers should be fired
-when the SmartShop unit is visible. The visibility of the SmartLink inside
-the SmartShop unit does not matter.
+.. NOTE: Since custom publisher tags do not run bam box auctions, they will
+   not receive auction responses containing bam box campaign event trackers.
 
 Tracker URLs may include the template parameter ``{RAND}``, which must be
 replaced with a randomly-generated number prior to firing the tracker.

@@ -47,25 +47,9 @@ Request
      - Page Session UUID. The UUID v4 value that your client has generated for
        the current page session.
 
-   * - bam_box_id
-     - integer
-     - Applies only to SmartLinks contained within a SmartShop unit
-       (Bam Box). The identifier for the SmartShop unit.
-
-   * - bam_box_page_num
-     - integer
-     - Applies only to SmartLinks contained within a SmartShop unit
-       (Bam Box). The SmartShop page number where the SmartLink is
-       initially placed.
-
-   * - bam_box_product_position
-     - integer
-     - Applies only to SmartLinks contained within a SmartShop unit
-       (Bam Box). The position of the SmartLink on the SmartShop
-       page.
-
-.. note:: SmartShop pages and positions are 0-indexed. The first SmartLink
-   in a SmartShop has ``bam_box_page_num=0`` and ``bam_box_product_position=0``.
+.. NOTE: Custom publisher tags do not run bam box auctions, since bam boxes
+   have their own embedded tag. To avoid confusion, we avoid documenting the
+   bam box parameters.
 
 
 Response
@@ -169,17 +153,6 @@ trackers that apply to your SmartLink placement:
    * - Event Tracker Type
      - Event Description
 
-   * - bam_box_impression
-     - Applies only to SmartLinks contained within a SmartShop unit
-       (Bam Box). Fire this event tracker once the SmartShop containing
-       the SmartLink is loaded on the page.
-
-   * - bam_box_viewable_impression
-     - Applies only to SmartLinks contained within a SmartShop unit
-       (Bam Box). Fire this event tracker once the SmartShop containing
-       the SmartLink is scrolled into view on the page. (The SmartLink
-       itself need not be in view.)
-
    * - impression
      - Signals that at least one occurrence of this SmartLink has been
        loaded on the page. You may fire this event tracker immediately
@@ -189,9 +162,9 @@ trackers that apply to your SmartLink placement:
      - Fire this event tracker once any occurrence of this SmartLink is
        scrolled into view on the page.
 
-Remember that tracker URLs may include the template parameter ``{RAND}``,
-which must be replaced with a randomly-generated number for cache-busting
-prior to firing the tracker.
+Tracker URLs may include the template parameter ``{RAND}``, which must be
+replaced with a randomly-generated number for cache-busting prior to firing
+the tracker.
 
 Do NOT fire a third-party event tracker more than once per page for the same
 event, even if the same SmartLink appears multiple times on that page.
@@ -206,9 +179,6 @@ Example
         ?a=1629223267830557131
         &t=1517261651
         &uuid=8132ac19-109a-466e-8037-540a9bd12798
-        &bam_box_id=1234
-        &bam_box_page_num=0
-        &bam_box_product_position=0
 
 ::
 
@@ -240,19 +210,13 @@ Example
               "id": 8030310
             },
             "tracker_urls": {
-              "bam_box_viewable_impression": [
-                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=bv;ord={RAND};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?",
+              "viewable_impression": [
+                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=lv;ord=1629147433127336253;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?",
                 "https://ad.atdmt.com.example/1111?r={RAND}"
               ],
-              "bam_box_impression": [
-                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=bi;ord={RAND};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?",
-                "https://ad.atdmt.com.example/2222?r={RAND}"
-              ],
-              "viewable_impression": [
-                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=lv;ord=1629147433127336253;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?"
-              ],
               "impression": [
-                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=li;ord=1629147433127336253;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?"
+                "https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;kw=li;ord=1629147433127336253;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?",
+                "https://ad.atdmt.com.example/2222?r={RAND}"
               ]
             }
           },
