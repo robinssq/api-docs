@@ -15,7 +15,7 @@ browse the full documentation below:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Overview
+   :caption: API Overview
 
    auth
    requests
@@ -25,6 +25,7 @@ browse the full documentation below:
    :caption: Publisher API
 
    smartlink
+   auction
 
 .. toctree::
    :maxdepth: 2
@@ -33,6 +34,7 @@ browse the full documentation below:
    tagbasics
    tagpublisher
    tagmerchant
+   tagpublishercustom
 
 .. toctree::
    :maxdepth: 2
