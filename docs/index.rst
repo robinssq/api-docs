@@ -26,6 +26,7 @@ browse the full documentation below:
 
    smartlink
    auction
+   events
 
 .. toctree::
    :maxdepth: 2
