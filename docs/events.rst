@@ -15,8 +15,8 @@ Request
 Available event categories and types
 """"""""""""""""""""""""""""""""""""
 
-**Impressions** track which page elements are being presented to your readers,
-while **interactions** track how your readers are engaging with your content.
+.. NOTE: To keep the workflow simple, right now we are not requiring custom
+   tags to send viewable impression events or interaction events.
 
 .. list-table::
    :widths: 15 25 60
@@ -34,16 +34,6 @@ while **interactions** track how your readers are engaging with your content.
    * - impressions
      - bam_link_impression
      - Signals that a SmartLink (Bam Link) has loaded on the page.
-
-   * - impressions
-     - bam_link_viewable_impression
-     - Signals that a SmartLink (Bam Link) on the page is visible to the user.
-
-   * - interactions
-     - bam_link_hover
-     - Signals that the user has hovered over the SmartLink (Bam Link) with
-       their mouse or other pointing device, **for at least one second**.
-       (This event does not apply to mobile websites.)
 
 
 Event request payload
@@ -79,12 +69,8 @@ User information fields
 """""""""""""""""""""""
 
 You must generate and assign a :ref:`Page Session UUID <page_session_tutorial>`
-to your events. The other fields listed here provide information about your
-site visitor for deeper analytics and are optional. Personal user information
-that you submit will be automatically obfuscated by our servers before it is
-stored, in accordance with our `privacy policy`_. However, you may elect not
-to submit this information at all if your visitor is subject to your own data
-collection opt-outs.
+to your events. The other fields listed here provide context about your
+site visitor and your article for deeper analytics.
 
 .. list-table::
    :widths: 30 10 60
@@ -107,21 +93,7 @@ collection opt-outs.
      - string
      - Optional. The HTTP Referer URL.
 
-   * - source_user_id
-     - string
-     - Optional. A unique identifier such as a username for the current
-       visitor to your site. (Our servers will automatically hash this
-       value before storing it to protect user privacy.)
-
-   * - user_agent
-     - string
-     - Optional. The HTTP User-Agent.
-
-   * - email
-     - string
-     - Optional. An email address for the current visitor to your site.
-       (Our servers will automatically hash this value before storing it
-       to protect user privacy.)
+.. NOTE: many fields omitted here to simplify the workflow
 
 
 Event data for page impressions
@@ -131,8 +103,8 @@ Page events currently require no additional data. In the ``events`` list,
 send an empty object ``{}``.
 
 
-Event data for SmartLink (Bam Link) impressions and interactions
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Event data for SmartLink (Bam Link) impressions
+"""""""""""""""""""""""""""""""""""""""""""""""
 
 In the ``events`` list, send an object containing the following data for
 each SmartLink:
@@ -205,5 +177,3 @@ Submitting a group of two SmartLink impression events using a single request::
     HTTP/1.1 201 CREATED
     Content-Length: 0
 
-
-.. _privacy policy: https://dashboard.narrativ.com/#/privacy-policy

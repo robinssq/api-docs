@@ -139,7 +139,10 @@ SmartLink Events
 ----------------
 
 Record the list of SmartLinks on your page by submitting **SmartLink Impressions**.
-For example::
+If the same SmartLink appears multiple times in a single article, record
+multiple events (even though you only ran the auction once). Here is an
+example of the events for an article containing one instance of SmartLink
+1522995078114976993 and two instances of SmartLink 1611792246540568252::
 
     POST /api/v1/events/impressions/bam_link_impression/
 
@@ -154,29 +157,10 @@ For example::
           "auction_id": "1522995078114976993"
         },
         {
-          "auction_id": "1522738266273264784"
-        }
-      ]
-    }
-
-
-Submit **SmartLink Viewable Impressions** as SmartLinks on the page scroll
-into view::
-
-    POST /api/v1/events/impressions/bam_link_viewable_impression/
-
-    {
-      "organization_type": "publisher",
-      "organization_id": 1,
-      "user": {
-        "page_session_uuid": "8132ac19-109a-466e-8037-540a9bd12798"
-      },
-      "events": [
-        {
-          "auction_id": "1522995078114976993"
+          "auction_id": "1611792246540568252"
         },
         {
-          "auction_id": "1522738266273264784"
+          "auction_id": "1611792246540568252"
         }
       ]
     }
