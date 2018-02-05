@@ -223,10 +223,10 @@ response::
 
     https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;ord={RAND};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?"
 
-To fire a third-party event tracker, insert a new hidden HTML ``IMG`` tag
+To fire a third-party event tracker, insert a new hidden HTML ``img`` tag
 with the tracker URL as the image source::
 
-    <IMG SRC="https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;ord=1629147433127336253;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?" />
+    <img src="https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;ord=1629147433127336253;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?" />
 
 Do NOT fire a third-party event tracker more than once per page for the same
 event, even if the same SmartLink appears multiple times on that page.
