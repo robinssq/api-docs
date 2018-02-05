@@ -1,6 +1,10 @@
 Publisher Events
 ================
 
+.. note:: The Events API does not require client authentication, but may be
+   subject to rate-limiting if called an extreme number of times from the
+   same origin.
+
 Submit New Publisher Events
 ---------------------------
 
