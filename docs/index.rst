@@ -25,6 +25,7 @@ browse the full documentation below:
    :caption: Publisher API
 
    smartlink
+   linkmate
    auction
    events
 
