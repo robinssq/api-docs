@@ -11,6 +11,8 @@ However, if you have a special use case not covered by our default tag, it is
 possible to write your own custom integration with our APIs.
 
 
+.. _page_session_tutorial:
+
 Page Session Tracking
 ---------------------
 
@@ -32,7 +34,26 @@ different pages or different users.
    Page Session UUID on Javascript load may not be enough! Ensure that your
    UUID changes every time the reader navigates to a new article.
 
-.. TODO: Page Load Events
+
+Page Impression Events
+----------------------
+
+After generating your Page Session UUID, record the beginning of the page
+session by firing a **Page Impression** via the :doc:`Events API <events>`.
+For example::
+
+    POST /api/v1/events/impressions/page_impression/
+
+    {
+      "organization_type": "publisher",
+      "organization_id": 1,
+      "user": {
+        "page_session_uuid": "8132ac19-109a-466e-8037-540a9bd12798"
+      },
+      "events": [
+        {}
+      ]
+    }
 
 
 SmartLinks
@@ -114,6 +135,37 @@ only submit one Auction API request and update both links to the same
 destination URL.
 
 
+SmartLink Events
+----------------
+
+Record the list of SmartLinks on your page by submitting **SmartLink Impressions**.
+If the same SmartLink appears multiple times in a single article, record
+multiple events (even though you only ran the auction once). Here is an
+example of the events for an article containing one instance of SmartLink
+1522995078114976993 and two instances of SmartLink 1611792246540568252::
+
+    POST /api/v1/events/impressions/bam_link_impression/
+
+    {
+      "organization_type": "publisher",
+      "organization_id": 1,
+      "user": {
+        "page_session_uuid": "8132ac19-109a-466e-8037-540a9bd12798"
+      },
+      "events": [
+        {
+          "auction_id": "1522995078114976993"
+        },
+        {
+          "auction_id": "1611792246540568252"
+        },
+        {
+          "auction_id": "1611792246540568252"
+        }
+      ]
+    }
+
+
 Third-Party Event Trackers
 --------------------------
 
@@ -171,8 +223,8 @@ response::
 
     https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;ord={RAND};dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?"
 
-To fire an event tracker, insert a new hidden HTML ``IMG`` tag with the
-tracker URL as the image source::
+To fire a third-party event tracker, insert a new hidden HTML ``IMG`` tag
+with the tracker URL as the image source::
 
     <IMG SRC="https://ad.doubleclick.net.example/ddm/trackimp/N1234.1234567NARRATIV/B12345678.123456789;dc_trk_aid=123456789;dc_trk_cid=12345678;ord=1629147433127336253;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=?" />
 

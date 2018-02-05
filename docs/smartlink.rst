@@ -80,6 +80,10 @@ Response
      - Type
      - Description
 
+   * - auction_id
+     - string
+     - A long unique identifier for the SmartLink that was created.
+
    * - smart_link_id
      - integer
      - A unique identifier for the SmartLink that was created.
