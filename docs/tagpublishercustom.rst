@@ -80,13 +80,65 @@ For example::
 Each SmartLink has an **Auction ID**, a unique 64-bit integer identifying
 the link.
 
-.. TODO: LinkMate: Automatic SmartLink Creation
-
-.. TODO: Impression Events
-
 .. warning:: Even though the Auction ID is an integer, you must store it as a
    string in Javascript. Javascript ``Number`` types are not large enough to
    hold 64-bit integers, resulting in data corruption.
+
+
+LinkMate: Automatic SmartLink Retrieval
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If your publisher account is a member of our LinkMate program, you can also
+use the :doc:`LinkMate API <linkmate>` to retrieve SmartLink Auction IDs for
+the raw URLs in your article. Our systems will automatically create any
+SmartLinks that do not already exist, so that you no longer need to create
+them manually in the Chrome Extension.
+
+To use this feature, your tag should submit a list of all distinct external
+URLs in the body of your article. For example::
+
+    POST /api/v1/publishers/2143/linkmate/smart_links/
+
+    {
+      "article": {
+        "name": "Top Search Engines",
+        "url": "https://my-blog.com.example/top-search-engines.html"
+      },
+      "links": [
+        {
+          "raw_url": "https://www.google.com/",
+          "exclusive_match_requested": true
+        },
+        {
+          "raw_url": "https://www.bing.com/",
+          "exclusive_match_requested": true
+        }
+      ]
+    }
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+
+    {
+      "info": {
+        "error": false,
+        "status": 200
+      },
+      "data": [
+        {
+          "smart_links": [
+            {
+              "auction_id": 1629787850745092913,
+              "url": "https://www.google.com/"
+            },
+            {
+              "auction_id": 1629787851069847260,
+              "url": "https://www.bing.com/"
+            }
+          ]
+        }
+      ]
+    }
 
 
 Auctions
