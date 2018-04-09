@@ -188,7 +188,7 @@ the response might look like the following::
           "smart_links": [
             {
               "smart_link_id": 211925,
-              "auction_id": 1629787850745092913,
+              "auction_id": "1629787850745092913",
               "uid_created": null,
               "datetime_created": "2018-02-05T19:16:57Z",
               "datetime_updated": "2018-02-05T19:16:57Z",
@@ -199,7 +199,7 @@ the response might look like the following::
             },
             {
               "smart_link_id": 211926,
-              "auction_id": 1629787851069847260,
+              "auction_id": "1629787851069847260",
               "uid_created": null,
               "datetime_created": "2018-02-05T19:16:57Z",
               "datetime_updated": "2018-02-05T19:16:57Z",

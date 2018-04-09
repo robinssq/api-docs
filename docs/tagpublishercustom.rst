@@ -128,11 +128,11 @@ URLs in the body of your article. For example::
         {
           "smart_links": [
             {
-              "auction_id": 1629787850745092913,
+              "auction_id": "1629787850745092913",
               "url": "https://www.google.com/"
             },
             {
-              "auction_id": 1629787851069847260,
+              "auction_id": "1629787851069847260",
               "url": "https://www.bing.com/"
             }
           ]
