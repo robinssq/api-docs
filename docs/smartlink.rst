@@ -120,7 +120,7 @@ Example
       "data": [
         {
           "smart_link_id": 2554,
-          "auction_id": 1611792246540568252,
+          "auction_id": "1611792246540568252",
           "uid_created": 2,
           "datetime_created": "2017-07-26T19:48:25Z",
           "pub_id": 1,
