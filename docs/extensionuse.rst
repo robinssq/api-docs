@@ -8,26 +8,33 @@ Navigate to any merchant that sells the product you want to SmartLink and click 
 
 .. image:: _static/extension_instructions/5.png
 
-Step 2. Associate the product link with the story name
+Step 2. (Optional) Select a channel
+-----------------------------------
+Selecting a channel will filter existing articles to those created in that channel. If you don't select a channel, none will be assigned.
+
+.. image:: _static/extension_instructions/1-channel-select.png
+
+Step 3. Associate the product link with the story name
 ------------------------------------------------------
 
 You can do this in one of two ways:
 
 **1. Create a new article link**
 
-  - Type article name and date next to the gold “+” button, then click SMARTLINK to create a link.
-  - (Note: Match the article title verbatim to your site, e.g., “The 15 Best Eye Creams 8/29/17”)
+  - Type the article name and date next to the gold "+" button, then click CREATE + LINK to create the link and the article.
+  - Distinguish links for newsletters by creating them in the Newsletter channel and naming your newsletter articles "[Newsletter] [Date]".
+  - See `SmartLink Naming Conventions`_ for more best practices in naming articles.
 
 .. image:: _static/extension_instructions/7.png
 
 **2. Select from the list of existing articles**
 
-  - Scroll through the drop down box and click SMARTLINK next to the article where you want to generate a link.
-  - (Note:  Distinguish links for newsletters by naming your newsletter edits  “Newsletter Date Month”. This is the only way we can correctly attribute orders to the right channel.)
+  - Select a channel to filter articles in that channel.
+  - Scroll through the drop down box and click LINK next to the article where you want to generate a link.
 
 .. image:: _static/extension_instructions/6.png
 
-Step 3. Select Dynamic or Exclusive link
+Step 4. Select Dynamic or Exclusive link
 ----------------------------------------
 
 Need to ensure the link only goes to one destination?
@@ -38,12 +45,12 @@ Need to ensure the link only goes to one destination?
 .. image:: _static/extension_instructions/Dynamic.png
 .. image:: _static/extension_instructions/Exclusive.png
 
-Step 4. Create your SmartLink
+Step 5. Create your SmartLink
 -----------------------------
 
-  - Once you have clicked the blue SMARTLINK button, the link will automatically copy to your clipboard, and is ready for use in your content.
-  - Type the line you want to hyperlink in your CMS (e.g. “Shop Now”).
-  - Paste the SmartLink into your hyperlink.
+  - Once you have created the SmartLink, its URL will be copied to your clipboard automatically and is ready for use.
+  - Type the line you want to hyperlink in your CMS (e.g. "Shop Now").
+  - Paste the SmartLink URL into your hyperlink. When you publish the article, the SmartLink will be live. 
 
 .. image:: _static/extension_instructions/8.png
 
