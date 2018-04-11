@@ -21,8 +21,8 @@ You can do this in one of two ways:
 
 **1. Create a new article link**
 
-  - Type the article name and date next to the gold “+” button, then click CREATE + LINK to create the link and the article.
-  - Distinguish links for newsletters by creating them in the Newsletter channel and naming your newsletter articles “[Newsletter] [Date]”.
+  - Type the article name and date next to the gold "+" button, then click CREATE + LINK to create the link and the article.
+  - Distinguish links for newsletters by creating them in the Newsletter channel and naming your newsletter articles "[Newsletter] [Date]".
   - See `SmartLink Naming Conventions`_ for more best practices in naming articles.
 
 .. image:: _static/extension_instructions/7.png
@@ -48,8 +48,8 @@ Need to ensure the link only goes to one destination?
 Step 5. Create your SmartLink
 -----------------------------
 
-  - Once you have created the SmartLink, its URL will be copied to your clipboard aautomatically and is ready for use.
-  - Type the line you want to hyperlink in your CMS (e.g. “Shop Now”).
+  - Once you have created the SmartLink, its URL will be copied to your clipboard automatically and is ready for use.
+  - Type the line you want to hyperlink in your CMS (e.g. "Shop Now").
   - Paste the SmartLink URL into your hyperlink. When you publish the article, the SmartLink will be live. 
 
 .. image:: _static/extension_instructions/8.png
