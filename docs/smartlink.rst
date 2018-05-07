@@ -76,7 +76,6 @@ Example
              "article_name": "Top Ten Search Engines",
              "article_url": "http://www.my-blog.example",
              "article_publication_date": "2017-08-02T17:00:00Z",
-             "channel": "Newsletter",
              "exclusive_match_requested": true}' \
         https://api.narrativ.com/api/v1/smart_links/
 
@@ -98,7 +97,6 @@ Example
           "datetime_created": "2017-07-26T19:48:25Z",
           "pub_id": 1,
           "url": "https://www.google.com/",
-          "channel": "Newsletter",
           "exclusive_match_requested": true,
           "smart_link_url": "https://shop-links.co/1611792246540568252",
           "article": {

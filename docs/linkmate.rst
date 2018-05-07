@@ -194,7 +194,6 @@ the response might look like the following::
               "datetime_updated": "2018-02-05T19:16:57Z",
               "pub_id": 2143,
               "url": "https://www.google.com/",
-              "channel": null,
               "exclusive_match_requested": true
             },
             {
@@ -205,7 +204,6 @@ the response might look like the following::
               "datetime_updated": "2018-02-05T19:16:57Z",
               "pub_id": 2143,
               "url": "https://www.bing.com/",
-              "channel": null,
               "exclusive_match_requested": true
             }
           ]
