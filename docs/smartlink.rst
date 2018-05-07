@@ -38,36 +38,9 @@ Request
      - timestamp
      - The date/time when the article is expected to be published.
 
-   * - channel
-     - string
-     - Optional. The name of the :ref:`advertising channel <channels>`, used for grouping data in reports.
-
    * - exclusive_match_requested
      - boolean
      - Optional. If true, lock this SmartLink to the original merchant. Default false.
-
-
-.. _channels:
-
-.. list-table::
-   :header-rows: 1
-
-   * - Channel Name
-
-   * - Site
-
-   * - Newsletter
-
-   * - Facebook
-
-   * - Instagram
-
-   * - Twitter
-
-   * - YouTube
-
-   * - Other
-
 
 Response
 ^^^^^^^^
