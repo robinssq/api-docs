@@ -1,3 +1,24 @@
+body {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wy-side-scroll {
+   background-color: #061B2B;
+}
+
+.wy-side-nav-search {
+   background-color: #061B2B;
+   text-align: left;
+}
+
+.wy-nav-top {
+   background-color: #061B2B;
+}
+
 /*
  * override table width restrictions
  * https://github.com/rtfd/sphinx_rtd_theme/issues/259
