@@ -74,7 +74,7 @@ Article information
      - Description
 
    * - name
-     - string(255)
+     - string(100)
      - The name of the page/article which contains your links.
 
    * - url
