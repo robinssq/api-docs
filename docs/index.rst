@@ -28,6 +28,7 @@ browse the full documentation below:
    linkmate
    auction
    events
+   statistics
 
 .. toctree::
    :maxdepth: 2
