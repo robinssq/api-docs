@@ -80,7 +80,7 @@ having the following structure:
 
    * - advertiser_name
      - string
-     - The full name of the advertiser.
+     - The full name of the advertiser. Will default to ``null`` if the advertiser is outside the Narrativ merchant network.
 
    * - article_name
      - string
