@@ -45,21 +45,18 @@ Request
 
    * - limit
      - integer
-     - Optional: The upper limit on the number of rows returned by this query. Current default is 5000.
+     - Optional: The upper limit on the number of rows returned by this query. The current default and maximum is ``10000``.
 
    * - order_by
      - string
      - Optional: Order the returned rows by the specified column. Current default is ``clicks``. Acceptable values are:
 
-        - ``advertiser_name``
-        - ``article_name``
+        - ``article_id``
         - ``advertiser_attributed_sales``
         - ``pub_earnings``
-        - ``article_id``
         - ``merch_id``
         - ``impressions``
         - ``advertiser_attributed_revenue``
-        - ``pub_id``
         - ``event_date``
         - ``clicks``
 
