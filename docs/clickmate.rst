@@ -1,0 +1,91 @@
+ClickMate
+========
+
+Overview
+-----
+
+ClickMate provides a wrapper that you can use on any link to convert
+it, on the fly, to a SmartLink. This means that the link will go through our
+matching process, and on future clicks will work through our real time
+auction system and will re-route to the most beneficial advertiser.
+
+Your account must be a member of our LinkMate program to use this feature.
+For more information about this program, feel free to `contact us`_.
+
+
+
+Build a ClickMate Link
+-------------------------
+
+Say you want to send your readers to a product at https://merchant.example/product1234. Normally
+you would put that link in your html, or use our Chrome Extension to turn it into a SmartLink.
+ClickMate gives you another option. You would wrap the link into the form
+
+https://shop-links.co/link/?url=https%3A%2F%2Fmerchant.example%2Fproduct1234&publisher_slug=myacct&article_title=my-story
+
+The first time someone clicks that link, our system will create a SmartLink in your account if
+`merchant.example` is one of the domains we handle for you. On subsequent clicks, if the link is
+matched and an auction takes place, the destination will be redirected. If there is no auction,
+the link will just be redirected to the original url.
+
+The ideal usage for this is to set up a programmatic integration- either wrap all commerce links
+on your site or all of the ones you want Narrativ to monetize. Our system will make sure that
+your readers get to the appropriate destination while finding you all the best monetezation opportunities.
+If the wrapping happens server side by your CMS, this will even work in no-javascript or ad-blocked
+environments like AMP.
+
+
+Query Params
+--------------------------
+
+.. list-table::
+   :widths: 35 10 55
+   :header-rows: 1
+
+   * - URL Path Parameter
+     - Type
+     - Description
+
+   * - url
+     - string(2048)
+     - The URL of the target link (must be URL encoded!) *Required* without this, users will see an error page
+
+   * - article_url
+     - string(2048)
+     - The URL of the article your link is coming from (must be URL encoded!). *Optional*
+
+   * - article_name
+     - string(2048)
+     - The name or title of the article your link is coming from. *Optional* We require either this or url (or both) to correctly group and monetize links
+
+   * - publisher_slug
+     - string(2048)
+     - The slug provided by your Narrativ account rep. *Required* Without this we will not know what account to monetize clicks for
+
+   * - exclusive
+     - Integer
+     - set this to 1 if you want to ensure that this particular link only goes to the original advertiser *Optional*
+
+   * - u1
+     - string(2048)
+     - arbitrary tracking parameter that you may apply to links for your own tracking, will be passed to our stats *Optional*
+
+
+Example Code
+------------------
+
+In Javascript:
+
+.. code-block:: javascript
+
+   var url = 'https://merchant.example/product1234';
+   var slug = 'myacct'
+   var title = document.title;
+   var article_url = window.location.href;
+   var clickmateUrl = 'https://shop-links.co/link?url=' + encodeURIComponent(url) +
+      '&publisher_slug=' + myacct +
+      '&article_name=' + title +
+      '&article_url=' + encodeURIComponent(article_url)
+
+
+.. _contact us: mailto:hello@narrativ.com
