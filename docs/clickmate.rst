@@ -1,8 +1,8 @@
 ClickMate
-========
+=========
 
 Overview
------
+--------
 
 ClickMate provides a wrapper that you can use on any link to convert
 it, on the fly, to a SmartLink. This means that the link will go through our
@@ -15,20 +15,20 @@ For more information about this program, feel free to `contact us`_.
 
 
 Build a ClickMate Link
--------------------------
+----------------------
 
-Say you want to send your readers to a product at https://merchant.example/product1234. Normally
-you would put that link in your html, or use our Chrome Extension to turn it into a SmartLink.
-ClickMate gives you another option. You would wrap the link into the form
+If you wanted to monetize a link to `https://dermstore.com.example/shop/product1234`
+you would put that link in your HTML, or use our Chrome Extension to turn it into a SmartLink.
+ClickMate gives you another option. You would wrap the link in the form
 
-https://shop-links.co/link/?url=https%3A%2F%2Fmerchant.example%2Fproduct1234&publisher_slug=myacct&article_title=my-story
+`https://shop-links.co/link/?url=https%3A%2F%2Fdermstore.com.example%2Fshop%2Fproduct1234&publisher_slug=myacct&article_title=my-story`
 
 The first time someone clicks that link, our system will create a SmartLink in your account if
-`merchant.example` is one of the domains we handle for you. On subsequent clicks, if the link is
+`dermstore.com.example` is one of the domains we handle for you. On subsequent clicks, if the link is
 matched and an auction takes place, the destination will be redirected. If there is no auction,
-the link will just be redirected to the original url.
+the link will just be redirected to the original URL.
 
-The ideal usage for this is to set up a programmatic integration- either wrap all commerce links
+The ideal usage for this is to set up a programmatic integration--either wrap all commerce links
 on your site or all of the ones you want Narrativ to monetize. Our system will make sure that
 your readers get to the appropriate destination while finding you all the best monetezation opportunities.
 If the wrapping happens server side by your CMS, this will even work in no-javascript or ad-blocked
@@ -55,11 +55,11 @@ Query Params
      - The URL of the article your link is coming from (must be URL encoded!). *Optional*
 
    * - article_name
-     - string(2048)
-     - The name or title of the article your link is coming from. *Optional* We require either this or url (or both) to correctly group and monetize links
+     - string(100)
+     - The name or title of the article your link is coming from. *Optional* We require either this or `aritcle_url` (or both) to correctly group and monetize links
 
    * - publisher_slug
-     - string(2048)
+     - string(64)
      - The slug provided by your Narrativ account rep. *Required* Without this we will not know what account to monetize clicks for
 
    * - exclusive
@@ -71,21 +71,28 @@ Query Params
      - arbitrary tracking parameter that you may apply to links for your own tracking, will be passed to our stats *Optional*
 
 
+URL Encoding
+------------
+
+All parameters must be URL encoded. See `URL Encoder`_.
+
+
 Example Code
-------------------
+------------
 
 In Javascript:
 
 .. code-block:: javascript
 
    var url = 'https://merchant.example/product1234';
-   var slug = 'myacct'
+   var slug = 'myacct';
    var title = document.title;
    var article_url = window.location.href;
    var clickmateUrl = 'https://shop-links.co/link?url=' + encodeURIComponent(url) +
       '&publisher_slug=' + myacct +
       '&article_name=' + title +
-      '&article_url=' + encodeURIComponent(article_url)
+      '&article_url=' + encodeURIComponent(article_url);
 
 
 .. _contact us: mailto:hello@narrativ.com
+.. _URL Encoder: https://www.urlencoder.org/
