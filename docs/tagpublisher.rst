@@ -40,8 +40,8 @@ in the HEAD section of all your site's pages.
 Usage
 -----
 
-If your publisher account is a member of our LinkMate program, you can enable the 
-LinkMate feature for your Javascript tag. The tag will automatically scan your article 
+If your publisher account is a member of our LinkMate program, you can enable the
+LinkMate feature for your Javascript tag. The tag will automatically scan your article
 and convert any regular links to SmartLinks.
 
 Toggle LinkMate
@@ -49,7 +49,13 @@ Toggle LinkMate
 
 * To enable or disable LinkMate globally for your publisher account, contact us at `hello@narrativ.com`_
 
-* Once LinkMate is enabled on your publisher account, you can toggle LinkMate on and off on a 
+* Once LinkMate is enabled on your publisher account, you can toggle LinkMate on or off across your entire site
+  by updating the Narrativ window object
+  ::
+
+    window.NRTV_EVENT_DATA.linkmate = true;
+
+* Once LinkMate is enabled on your publisher account, you can toggle LinkMate on and off on a
   specific article by updating the Narrativ window object
   ::
 
