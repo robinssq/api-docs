@@ -19,9 +19,12 @@ Build a ClickMate Link
 
 If you wanted to monetize a link to `https://dermstore.com.example/shop/product1234`
 you would put that link in your HTML, or use our Chrome Extension to turn it into a SmartLink.
-ClickMate gives you another option. You would wrap the link in the form
+ClickMate gives you another option. You would wrap the link in the form:
 
-`https://shop-links.co/link/?url=https%3A%2F%2Fdermstore.com.example%2Fshop%2Fproduct1234&publisher_slug=myacct&article_title=my-story`
+::
+
+   https://shop-links.co/link/?url=https%3A%2F%2Fdermstore.com.example%2Fshop%2Fproduct1234&publisher_slug=myacct&article_name=my-story
+
 
 The first time someone clicks that link, our system will create a SmartLink in your account if
 `dermstore.com.example` is one of the domains we handle for you. On subsequent clicks, if the link is
@@ -86,12 +89,12 @@ In Javascript:
 
    var url = 'https://merchant.example/product1234';
    var slug = 'myacct';
-   var title = document.title;
-   var article_url = window.location.href;
+   var articleName = document.title;
+   var articleUrl = window.location.href;
    var clickmateUrl = 'https://shop-links.co/link?url=' + encodeURIComponent(url) +
-      '&publisher_slug=' + myacct +
-      '&article_name=' + title +
-      '&article_url=' + encodeURIComponent(article_url);
+      '&publisher_slug=' + slug +
+      '&article_name=' + encodeURIComponent(articleName) +
+      '&article_url=' + encodeURIComponent(articleUrl);
 
 
 .. _contact us: mailto:hello@narrativ.com
