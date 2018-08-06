@@ -17,6 +17,9 @@ View these files in your web browser:
 ```
 docs/_build/html/index.html
 docs/_build/singlehtml/index.html
+
+# Shortcut for previewing HTML in Chrome
+$ make preview SECTION=smartlink # opens docs/_build/html/smartlink.html
 ```
 
 To build specific formats only:

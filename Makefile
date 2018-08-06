@@ -1,4 +1,6 @@
 IMAGE_VERSION ?= latest
+DIR=$(shell pwd)
+SECTION ?= index
 
 docker-build:
 	docker build -t bamx/api-docs:${IMAGE_VERSION} conf
@@ -27,3 +29,8 @@ docker-sphinx: docker-sphinx-html docker-sphinx-singlehtml
 #   make docker-sphinx-html
 docker-sphinx-%:
 	docker run -v `pwd`/docs:/opt/bamx/docs --workdir /opt/bamx/docs --rm bamx/api-docs make $*
+
+# Open file for preview in Chrome: make preview SECTION=smartlink
+# SECTION: name of the rst file
+preview:
+	bash -c "open -a Google\ Chrome ${DIR}/docs/_build/html/${SECTION}.html"
