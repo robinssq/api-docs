@@ -215,7 +215,7 @@ Example
               "name": "Designer Handbag",
               "url": "https://www.amazon.com.example/product/1234",
               "image_url": "https://www.static.amazon.example/image/path/1234",
-              "stock_status": true,
+              "is_in_stock": true,
               "price": "299.99",
               "id": 8030310
             },
