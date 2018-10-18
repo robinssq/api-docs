@@ -61,6 +61,12 @@ Toggle LinkMate
 
     window.NRTV_EVENT_DATA.donotlink = true;
 
+* To make all LinkMate links on the page exclusive, you can use the ``exclusiveLinks`` flag on the
+  Narrativ window object.
+  ::
+
+    window.NRTV_EVENT_DATA.exclusiveLinks = true;
+
 * To disable LinkMate on a specific link, add ``#donotlink`` to the end of the URL::
 
     http://amazon.com.example/BF93JSD34/ref=ods?#donotlink
