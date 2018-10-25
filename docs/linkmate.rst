@@ -61,6 +61,10 @@ Request payload
      - list[object]
      - Data for each link you are submitting.
 
+   * - unwrap_links
+     - boolean
+     - (Optional) If this is set to True or ommitted, we will check inside click trackers or deeplinks for domains to rewrite
+
 
 Article information
 """""""""""""""""""
