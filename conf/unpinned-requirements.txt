@@ -6,3 +6,4 @@
 sphinx
 sphinx-autobuild
 sphinx-rtd-theme
+pip-tools
