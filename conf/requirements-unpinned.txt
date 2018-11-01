@@ -1,8 +1,0 @@
-# These are the base requirements for building our documentation, without any
-# version pinning or listing of sub-dependencies. You should only install from
-# this file if you need to test against a bleeding-edge environment. For a
-# reproducible build, use `requirements.txt`.
-
-sphinx
-sphinx-autobuild
-sphinx-rtd-theme
