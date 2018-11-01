@@ -1,9 +1,13 @@
-# These are the base requirements for building our documentation, without any
-# version pinning or listing of sub-dependencies. You should only install from
-# this file if you need to test against a bleeding-edge environment. For a
-# reproducible build, use `requirements.txt`.
+# These are the requirements for building our documentation, both locally
+# and on Read the Docs. Read the Docs builds must be configured to use
+# this file, as part of the "Advanced Settings" for our project:
+#   https://readthedocs.com/dashboard/narrativ-narrativ/advanced/
+#
+# Note that Read the Docs already provides a default sphinx build environment,
+# but we do not use it because it contains some outdated and buggy packages --
+# https://github.com/rtfd/readthedocs.org/issues/2398
 
+pip-tools
 sphinx
 sphinx-autobuild
 sphinx-rtd-theme
-pip-tools

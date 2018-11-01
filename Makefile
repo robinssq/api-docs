@@ -37,15 +37,15 @@ docker-sphinx-%:
 preview:
 	bash -c "open -a Google\ Chrome ${DIR}/docs/_build/html/${SECTION}.html"
 
-docker-ssh:
-	docker run -it bamx/api-docs sh
+sh:
+	docker run -it --rm bamx/api-docs sh
 
 ######################################
 # Pip Tools
 ######################################
 
 pip-compile:
-	docker run -it -v ${DIR}/conf:/opt/bamx/conf bamx/api-docs pip-compile --rebuild --generate-hashes --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt
+	docker run -it --rm -v ${DIR}/conf:/opt/bamx/conf bamx/api-docs pip-compile --rebuild --generate-hashes --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt
 
 pip-upgrade:
-	docker run -it -v ${DIR}/conf:/opt/bamx/conf bamx/api-docs pip-compile --upgrade --rebuild --generate-hashes --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt
+	docker run -it --rm -v ${DIR}/conf:/opt/bamx/conf bamx/api-docs pip-compile --upgrade --rebuild --generate-hashes --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt
