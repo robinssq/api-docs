@@ -42,6 +42,10 @@ Request
      - boolean
      - Optional. If true, lock this SmartLink to the original merchant. Default false.
 
+   * - pub_id
+     - integer
+     - Publisher ID. Required if you have multiple publisher accounts.
+
 Response
 ^^^^^^^^
 
@@ -76,7 +80,8 @@ Example
              "article_name": "Top Ten Search Engines",
              "article_url": "http://www.my-blog.example",
              "article_publication_date": "2017-08-02T17:00:00Z",
-             "exclusive_match_requested": true}' \
+             "exclusive_match_requested": true,
+             "pub_id": 1}' \
         https://api.narrativ.com/api/v1/smart_links/
 
 ::
