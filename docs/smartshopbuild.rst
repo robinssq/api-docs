@@ -93,4 +93,4 @@ Note: Making changes and editing your SmartShop
 
 Once the code is pasted in your story, and your unit is live on site you can navigate to the SmartShop builder on our dashboard to make changes to it at any time. Simply make any changes you want and re-click the “Publish” button when you’re done to push those changes to the unit on site. The changes should be live within ~5 minutes.
 
-**Help and Support** - *Feel free to reach out to us at ursula@narrativ.com or laura@narrativ.com with any questions. We’re always happy to help!*
+**Help and Support** - *Feel free to reach out to your account manager or support@narrativ.com with any questions. We’re always happy to help!*
