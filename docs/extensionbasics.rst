@@ -23,4 +23,4 @@ The Narrativ extension will appear in the top right corner of Chrome. Click on t
 
 .. image:: _static/extension_instructions/4.png
 
-*\*Email ursula@narrativ.com for your Narrativ dashboard access and credentials.*
+*\*Contact your account manager or support@narrativ.com for your Narrativ dashboard access and credentials.*
