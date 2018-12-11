@@ -50,6 +50,12 @@ browse the full documentation below:
 
 .. toctree::
    :maxdepth: 2
+   :caption: Merchandiser How To
+
+   feeds
+
+.. toctree::
+   :maxdepth: 2
    :caption: Narrativ Legal
 
    privacypolicy
