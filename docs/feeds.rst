@@ -10,7 +10,6 @@ we've provided you with a username and password:
 
 Send via FTP
 ------------
-Username and password will be provided to you.
 Note: Enable passive and binary modes
 
 .. list-table::
@@ -20,18 +19,31 @@ Note: Enable passive and binary modes
    * - Field Name
      - Value
 
-   * - hostname
+   * - Host
      - feeds.bam-x.com
 
-   * - port
+   * - Static IP
+     - 52.7.95.122
+
+   * - Port
      - 2221
 
-   * - filename
+   * - Username
+     - Will be provided to you
+
+   * - Password
+     - Will be provided to you
+
+   * - Filename
      - USERNAME-USD-yyyy-mm-dd.csv.zip
 
 
 Send via SFTP
 ------------
+Please generate and provide us with a public RSA key to register as an authorized key for your users. Disable strict
+checking or remove previous entries from your SHH known_hosts file before each push; although the IP address
+remains the same, the host RSA key fingerprint will change.
+
 .. list-table::
    :widths: 20 70
    :header-rows: 1
@@ -39,11 +51,17 @@ Send via SFTP
    * - Field Name
      - Value
 
-   * - hostname
+   * - Host
      - feeds.bam-x.com
 
-   * - port
+   * - Static IP
+     - 52.7.95.122
+
+   * - Port
      - 2223
 
-   * - filename
+   * - Username
+     - Will be provided to you
+
+   * - Filename
      - USERNAME-USD-yyyy-mm-dd.csv.zip
