@@ -8,9 +8,17 @@ We can set up a call with engineering teams to set up a preferred method of deli
 We can either fetch your feed or you can send it to us via HTTP, FTP or SFTP using the following specifications after
 we've provided you with a username and password:
 
-FTP
+Send via FTP
 ------------
+username and password will be provided to you
 ``hostname: feeds.bam-x.com``
 ``port: 2221``
+``filename: USERNAME-USD-yyyy-mm-dd.csv.zip``
+Note: Enable passive and binary modes
+
+Send via SFTP
+------------
+``hostname: feeds.bam-x.com``
+``port: 2223``
 ``filename: USERNAME-USD-yyyy-mm-dd.csv.zip``
 Note: Enable passive and binary modes
