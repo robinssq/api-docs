@@ -1,8 +1,8 @@
 Product Feeds
-==========================
+=============
 
 Ingesting Product Feeds
-------------
+-----------------------
 
 We can set up a call with engineering teams to set up a preferred method of delivering us your product feed.
 We can either fetch your feed or you can send it to us via HTTP, FTP or SFTP using the specifications detailed below.
@@ -40,7 +40,7 @@ Note: Enable passive and binary modes
 
 
 Send via SFTP
-------------
+-------------
 Please generate and provide us with a public RSA key to register as an authorized key for your users.
 
 .. list-table::
@@ -61,9 +61,6 @@ Please generate and provide us with a public RSA key to register as an authorize
 
    * - Username
      - Will be provided to you
-
-   * - Private Key
-     - Created with public key
 
    * - Filename
      - USERNAME-USD-yyyy-mm-dd.csv.zip
