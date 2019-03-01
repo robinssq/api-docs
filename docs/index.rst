@@ -22,12 +22,13 @@ browse the full documentation below:
 
 .. toctree::
    :maxdepth: 2
-   :caption: Publisher API
+   :caption: Publisher Tools
 
    smartlink
    clickmate
    linkmate
    auction
+   amp
    events
    statistics
 

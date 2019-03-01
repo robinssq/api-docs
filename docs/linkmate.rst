@@ -1,6 +1,8 @@
 LinkMate
 ========
 
+.. _linkmate_api:
+
 Usage
 -----
 
