@@ -1,16 +1,18 @@
 AMP
 ========
 
+Narrativ's smartlink technology can be deployed to `Google AMP`_ pages.  To enable Smartlinks on your AMP page, please notify Narrativ and then integrate the ```amp-smartlinks`` tag into your AMP pages, as described below.
+
 Usage
 -----
 
-Find ``AMP-Smartlinks`` on `Github`_
+In addition to the docs below, you may reference the information provided on AMP's `Github`_ page.
 
-AMP Smartlinks retrieves SmartLinks from a set of URLs on an AMP page, automatically creating new SmartLinks that do not already exist. AMP Smartlinks is our full :ref:`Linkmate <linkmate_api>` offering in AMP.
+AMP Smartlinks searches the AMP article for Smartlink-compatible URLs, automatically creating new SmartLinks that do not already exist. AMP Smartlinks is our full :ref:`Linkmate <linkmate_api>` offering in AMP.
 
 Your account must be a member of our LinkMate program to use this feature. For more information about this program, feel free to `contact us`_
 
-* Make sure to replace "ACCOUNT NAME" with your Narrativ account name. If you aren't sure what you account name is then please reach out to your account manager or `contact us`_.
+* Make sure to replace "ACCOUNT NAME" with your Narrativ account name. If you don't know your account name, please reach out to your account manager or `contact us`_.
 
 ::
 
@@ -54,7 +56,7 @@ AMP Attribute values
    * - **linkmate**
      - Boolean
      - False
-     - The presence of this attribute determines if ``linkmate`` is true or not.
+     - The presence of this attribute determines if Linkmate is true or not.
 
    * - **exclusive-links**
      - Boolean
@@ -64,7 +66,7 @@ AMP Attribute values
    * - **link-attribute**
      - string
      - False
-     - Where you store the outbound link value. If it's not in ``href``.
+     - Where you store the outbound link value, if it is not in ``href``.
 
    * - **link-selector**
      - string
@@ -97,7 +99,7 @@ AMP Attribute values
          linkmate>
      </amp-smartlinks>
 
-* If you store outbound links in none ``href`` attributes then make sure to specify ``link-attribute`` in the element. Also, if you want to limit the selector used to detect links use ``link-selector``.
+* If you do not use ``href`` attributes to specify the outbound links, then make sure to specify ``link-attribute`` in the element. Also, if you want to limit the selector used to detect links use ``link-selector``.
  ::
 
      <amp-smartlinks
@@ -108,6 +110,16 @@ AMP Attribute values
          link-selector="a.links-to-be-monetized">
      </amp-smartlinks>
 
-.. _Github: https://github.com/ampproject/amphtml/blob/master/extensions/amp-smartlinks/amp-smartlinks.md
+* To disable LinkMate on a specific link, add ``#donotlink`` to the end of the URL
+::
 
+   http://exampleproductlink.example/supercoolproduct/ref=ods?#donotlink
+
+* To indicate an exclusive link, add ``#locklink`` to the end of the URL
+::
+
+   http://exampleproductlink.example/supercoolproduct/ref=ods?#locklink
+
+.. _Google AMP: https://www.ampproject.org/
+.. _Github: https://github.com/ampproject/amphtml/blob/master/extensions/amp-smartlinks/amp-smartlinks.md
 .. _contact us: mailto:hello@narrativ.com
