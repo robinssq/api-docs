@@ -1,7 +1,7 @@
 AMP
 ========
 
-Narrativ's smartlink technology can be deployed to `Google AMP`_ pages.  To enable Smartlinks on your AMP page, please notify Narrativ and then integrate the ```amp-smartlinks`` tag into your AMP pages, as described below.
+Narrativ's smartlink technology can be deployed to `Google AMP`_ pages.  To enable Smartlinks on your AMP page, please notify Narrativ and then integrate the ``amp-smartlinks`` tag into your AMP pages, as described below.
 
 Usage
 -----
