@@ -68,12 +68,12 @@ having the following structure:
      - Description
 
    * - best_effort_cpc
-     - string
-     - Point in time prediction of the CPC for the merchant publisher pairing.
+     - float
+     - Point in time prediction of the CPC for the merchant publisher pairing in USD
 
    * - product_url
      - string
-     - The :ref:`ClickMate <clickmate_overview>` URL which monetizes the retrieved product.
+     - The :ref:`ClickMate <clickmate_overview>` URL which monetizes the retrieved product
 
 
    * - product_information
@@ -97,7 +97,7 @@ having the following structure:
 
         - price
             - string
-            - The price of the retrieved product
+            - The price of the retrieved product in USD
 
         - product_name
             - string
@@ -130,7 +130,7 @@ Example Response
     {
         "data": [
             {
-                "best_effort_cpc": 0.50
+                "best_effort_cpc": 0.50,
                 "clickmate_link": "https://shop-links.co/link/?url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0Aexclusive=1&publisher_slug=myacct",
                     "product_information": {
                         "price": "15.99",
