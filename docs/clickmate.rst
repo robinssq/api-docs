@@ -1,6 +1,7 @@
 ClickMate
 =========
 
+.. _clickmate_overview:
 Overview
 --------
 

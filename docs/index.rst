@@ -26,6 +26,7 @@ browse the full documentation below:
 
    smartlink
    clickmate
+   exclusiveclickmate
    linkmate
    auction
    amp
