@@ -1,11 +1,11 @@
-Generate Exclusive ClickMate links
-==================================
+Exclusive ClickMate
+====================
 
 Overview
 --------
 
 By providing us a payload with certain product descriptors,
-we can return a set of monetizable :ref:`ClickMate <clickmate_overview>`
+we will return a set of monetizable :ref:`ClickMate <clickmate_overview>`
 links, along with our point-in-time estimate of the CPC for
 each product in the result set.
 
@@ -35,24 +35,23 @@ Request
 
    * - gtin
      - string(50)
-     - Product descriptor: the GTIN of the product to be wrapped in a ClickMate Link. *Optional, but one product descriptor must be present*
+     - Product descriptor: the GTIN of the product to be wrapped in a ClickMate Link. *Optional*, but one product descriptor must be present
 
    * - sku
      - string(50)
-     - Product descriptor: the SKU of the product to be wrapped in a ClickMate link. *Optional, but one product descriptor must be present*
+     - Product descriptor: the SKU of the product to be wrapped in a ClickMate link. *Optional*, but one product descriptor must be present
 
    * - product_url
      - string(2048)
-     - Product descriptor: the URL of the product to be wrapped in a ClickMate link (must be URL encoded!). *Optional, but one product descriptor must be present*
+     - Product descriptor: the URL of the product to be wrapped in a ClickMate link (must be URL encoded!). *Optional*, but one product descriptor must be present
 
    * - article_url
      - string(2048)
-     - The URL of the article your link is coming from (must be URL encoded!). *Optional*
+     - The URL of the article your link is coming from (must be URL encoded!). *Optional*, but this or `article_name` (or both) must be present to correctly group and monetize links
 
    * - article_name
      - string(100)
-     - The name or title of the article your link is coming from. *Optional* We require either this or `article_url` (or both) to correctly group and monetize links
-
+     - The name or title of the article your link is coming from. *Optional* but this or `article_url` (or both) must be present to correctly group and monetize links
 
 Response
 ^^^^^^^^
@@ -74,7 +73,7 @@ having the following structure:
 
    * - product_url
      - string
-     - The `ClickMate`_ URL which monetizes the retrieved product.
+     - The :ref:`ClickMate <clickmate_overview>` URL which monetizes the retrieved product.
 
 
    * - product_information
