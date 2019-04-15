@@ -5,8 +5,8 @@ Overview
 --------
 
 By providing us a payload with certain product descriptors,
-we can return a set of monetizable `ClickMate`_,
-along with our point-in-time estimate of the CPC for
+we can return a set of monetizable :ref:`ClickMate <clickmate_overview>`
+links, along with our point-in-time estimate of the CPC for
 each product in the result set.
 
 Your account must be a member of our LinkMate program to use this feature.
@@ -51,16 +51,11 @@ Request
 
    * - article_name
      - string(100)
-     - The name or title of the article your link is coming from. *Optional* We require either this or `aritcle_url` (or both) to correctly group and monetize links
-
-
+     - The name or title of the article your link is coming from. *Optional* We require either this or `article_url` (or both) to correctly group and monetize links
 
 
 Response
 ^^^^^^^^
-
-
-
 
 The response data consists of the list ``data``, with each entry
 having the following structure:
@@ -84,7 +79,7 @@ having the following structure:
 
    * - product_information
      - json
-     - Retrieved product details
+     - Product details
         - brand
             - string
             - The retrieved product's brand
@@ -97,7 +92,7 @@ having the following structure:
             - string
             - The retrieved product's image URL
 
-        - min_stock
+        - in_stock
             - boolean
             - If the product is currently in stock or not
 
@@ -108,9 +103,6 @@ having the following structure:
         - product_name
             - string
             - The retrieved product's name
-
-
-
 
 
 URL Encoding
@@ -124,11 +116,11 @@ Example Requests
 
 ::
 
-    GET /api/v1/exclusive_clickmate_links?publisher_slug=myacct&gtin=77777777777
+    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&gtin=77777777777
 
-    GET /api/v1/exclusive_clickmate_links?publisher_slug=myacct&sku=00000000&&gtin=88888888888888
+    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&sku=00000000&&gtin=88888888888888
 
-    GET /api/v1/exclusive_clickmate_links?publisher_slug=myacct&sku=00000000&&gtin=99999999999999&product_url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0A
+    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&sku=00000000&&gtin=99999999999999&product_url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0A
 
 
 Example Response
@@ -138,17 +130,17 @@ Example Response
 
     {
         "data": [
-        {
-            "product_information": {
-                "price": "15.99",
-                "product_name": "Example Product",
-                "in_stock": true,
-                "gtin": "55555555555555",
-                "image_url": "https://merchant.example/path/to/image_url",
-                "brand": "Example Brand"
-            },
-            "clickmate_link": "https://shop-links.co/link/?url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0Aexclusive=1&publisher_slug=myacct",
-            "best_effort_cpc": 0.50
+            {
+                "best_effort_cpc": 0.50
+                "clickmate_link": "https://shop-links.co/link/?url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0Aexclusive=1&publisher_slug=myacct",
+                    "product_information": {
+                        "price": "15.99",
+                        "product_name": "Example Product",
+                        "in_stock": true,
+                        "gtin": "55555555555555",
+                        "image_url": "https://merchant.example/path/to/image_url",
+                        "brand": "Example Brand"
+                    },
             }
         ]
     }
@@ -156,4 +148,3 @@ Example Response
 
 .. _contact us: mailto:hello@narrativ.com
 .. _URL Encoder: https://www.urlencoder.org/
-.. _ClickMate: http://docs.narrativ.com/en/stable/clickmate.html
