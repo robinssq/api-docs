@@ -1,5 +1,5 @@
-Exclusive ClickMate
-====================
+Product API
+============
 
 Overview
 --------
@@ -31,27 +31,37 @@ Request
 
    * - publisher_slug
      - string(64)
-     - The slug provided by your Narrativ account rep. *Required* Without this we will not know what account to monetize clicks for
+     - (*Required*) The slug provided by your Narrativ account rep.
 
    * - gtin
      - string(50)
-     - Product descriptor: the GTIN of the product to be wrapped in a ClickMate Link. *Optional*, but one product descriptor must be present
+     - **Product descriptor** (*Optional*): the GTIN of the product to be wrapped in a ClickMate Link
 
    * - sku
      - string(50)
-     - Product descriptor: the SKU of the product to be wrapped in a ClickMate link. *Optional*, but one product descriptor must be present
+     - **Product descriptor** (*Optional*): the SKU of the product to be wrapped in a ClickMate link
 
    * - product_url
      - string(2048)
-     - Product descriptor: the URL of the product to be wrapped in a ClickMate link (must be URL encoded!). *Optional*, but one product descriptor must be present
+     - **Product descriptor** (*Optional*): the URL of the product to be wrapped in a ClickMate link (must be URL encoded!)
 
    * - article_url
      - string(2048)
-     - The URL of the article your link is coming from (must be URL encoded!). *Optional*, but this or `article_name` (or both) must be present to correctly group and monetize links
+     - **Article info** (*Optional*): The URL of the article your link is coming from (must be URL encoded!)
 
    * - article_name
      - string(100)
-     - The name or title of the article your link is coming from. *Optional* but this or `article_url` (or both) must be present to correctly group and monetize links
+     - **Article info** (*Optional*): The name or title of the article your link is coming from
+
+
+Required Parameters
+^^^^^^^^^^^^^^^^^^^
+
+- Option 1: Provide at least one **product descriptor** in your request (``gtin``, ``sku``, ``product_url``) and at least one **article_info** (``article_url``, ``article_name``) 
+- Option 2: Provide at least one **product descriptor** in your request (``gtin``, ``sku``, ``product_url``) and zero **article_info** (``article_url``, ``article_name``).
+  In this case, you will need to append at least one **article_info** (``article_url``, ``article_name``) as query parameters to the resulting ClickMate link.
+  See :ref:`the ClickMate documentation <clickmate_overview>` for more information.
+
 
 Response
 ^^^^^^^^
