@@ -34,11 +34,11 @@ Request
      - (*Required*) The slug provided by your Narrativ account rep.
 
    * - gtin
-     - string(50)
-     - **Product descriptor** (*Optional*): the GTIN of the product to be wrapped in a ClickMate Link
+     - string(14)
+     - **Product descriptor** (*Optional*): the GTIN of the product to be wrapped in a ClickMate link
 
    * - sku
-     - string(50)
+     - string(255)
      - **Product descriptor** (*Optional*): the SKU of the product to be wrapped in a ClickMate link
 
    * - product_url
@@ -81,7 +81,7 @@ having the following structure:
      - float
      - Point in time prediction of the CPC for the merchant publisher pairing in USD
 
-   * - product_url
+   * - clickmate_link
      - string
      - The :ref:`ClickMate <clickmate_overview>` URL which monetizes the retrieved product
 
@@ -140,16 +140,16 @@ Example Response
     {
         "data": [
             {
-                "best_effort_cpc": 0.50,
+                "product_information": {
+                    "price": "15.99",
+                    "product_name": "Example Product",
+                    "in_stock": true,
+                    "gtin": "55555555555555",
+                    "image_url": "https://merchant.example/path/to/image_url",
+                    "brand": "Example Brand"
+                },
                 "clickmate_link": "https://shop-links.co/link/?url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0Aexclusive=1&publisher_slug=myacct",
-                    "product_information": {
-                        "price": "15.99",
-                        "product_name": "Example Product",
-                        "in_stock": true,
-                        "gtin": "55555555555555",
-                        "image_url": "https://merchant.example/path/to/image_url",
-                        "brand": "Example Brand"
-                    },
+                "best_effort_cpc": 0.50,
             }
         ]
     }
