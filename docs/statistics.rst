@@ -60,6 +60,9 @@ Request
         - ``event_date``
         - ``clicks``
 
+   * - out_of_network
+     - boolean
+     - Optional: If set to true, return data for other networks in addition to the Narrativ network. Default value is false.
 
 Response
 ^^^^^^^^
@@ -162,5 +165,5 @@ Get statistics grouped by articles and merchants per day between 2018-03-11 and 
                 "event_date": "2018-03-12",
                 "clicks": 200
             }
-        ] 
+        ]
     }
