@@ -75,5 +75,43 @@ Toggle LinkMate
 
     http://amazon.com.example/BF93JSD34/ref=ods?#locklink
 
+Utilizing Narrativ Data
+-----------------------
+
+As discussed above the main benefit of the Narrativ JsTag is to run auctions on page load. After an auction completes the Narrativ tag will write the output of the auction to the `data-bamx-auction` attribute. If you would like to update the text on or around the link after an auction runs you can use the data we store there to pull accurate product information. This product is good for publishers who’s commerce buttons or links mention the merchant's name and price (“$5 at Nordstrom”). This option would update the text on the page to match the auction winner.
+
+The full list of product information and expected schema can be found on our :doc:`Auction <auction>` page.
+
+Updating Your Buttons
+^^^^^^^^^^^^^^^^^^^^^
+
+Below is an example JS snippet that will create a `MutationObserver`_, on all relevant links on your article, which trigger after our auction runs.
+
+.. code-block:: javascript
+  :linenos:
+  :emphasize-lines: 11
+
+  const anchorNodes = [...document.querySelectorAll('a.monetized-links')];
+  const config = {attributes: true};
+
+  for (let i = 0; i < anchorNodes.length; i++) {
+  	let anchor = anchorNodes[i];
+
+  	const logFunction = (mutationList, observer) => {
+  		for (let j = 0; j < mutationList.length; j++) {
+  			const mutation = mutationList[j];
+
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-bamx-auction') {
+            console.log('Narrativ Auction has finished. Update display values now');
+            console.log(anchor.getAttribute('data-bamx-auction'));
+        }
+  		}
+  	};
+
+  	let observer = new MutationObserver(logFunction);
+  	observer.observe(anchor, config);
+  }
+
+.. _MutationObserver: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 
 .. _hello@narrativ.com: mailto:hello@narrativ.com
