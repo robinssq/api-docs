@@ -75,10 +75,10 @@ Toggle LinkMate
 
     http://amazon.com.example/BF93JSD34/ref=ods?#locklink
 
-Utilizing Narrativ Data
------------------------
+Updating Article Content with Auction Results
+---------------------------------------------
 
-As discussed above, the main benefit of the Narrativ JsTag is to run auctions on page load. This product works well for publishers who’s commerce buttons or links mention the merchant's name and price (“$5 at Nordstrom”). If you would like to dynamically display the auction winner and product price of a link, you can use the example to update your page.
+As discussed above, one main benefit of the Narrativ JsTag is to find commerce links on your site and run their auctions on page load. For publishers whose commerce buttons or article content mention the merchant's name and product price (“$5 at Nordstrom”), this feature will enable you to update those values dynamically.
 
 After an auction completes, the Narrativ tag will write the output of the auction to the `data-bamx-auction` attribute. In that attribute, you can find product price, retailer name, image_url, etc. to update the article information for a link. A full list of the auction response can be found on our :doc:`Auction <auction>` page.
 
