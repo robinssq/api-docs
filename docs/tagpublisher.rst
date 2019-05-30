@@ -75,5 +75,44 @@ Toggle LinkMate
 
     http://amazon.com.example/BF93JSD34/ref=ods?#locklink
 
+Updating Article Content with Auction Results
+---------------------------------------------
+
+As discussed above, one main benefit of the Narrativ JsTag is to find commerce links on your site and run their auctions on page load. For publishers whose commerce buttons or article content mention the merchant's name and product price (“$5 at Nordstrom”), this feature will enable you to update those values dynamically.
+
+After an auction completes, the Narrativ tag will write the output of the auction to the `data-bamx-auction` attribute. In that attribute, you can find product price, retailer name, image_url, etc. to update the article information for a link. A full list of the auction response can be found on our :doc:`Auction <auction>` page.
+
+Updating Your Buttons
+^^^^^^^^^^^^^^^^^^^^^
+
+Below is an example JS snippet that will create a `MutationObserver`_, on all relevant links on your article, which trigger after our auction runs.
+
+.. code-block:: javascript
+  :linenos:
+  :emphasize-lines: 11
+
+  const anchorNodes = [...document.querySelectorAll('a.monetized-links')];
+  const config = {attributes: true};
+
+  for (let i = 0; i < anchorNodes.length; i++) {
+    let anchor = anchorNodes[i];
+
+    const logFunction = (mutationList, observer) => {
+      for (let j = 0; j < mutationList.length; j++) {
+        const mutation = mutationList[j];
+
+        if (mutation.type === 'attributes' && mutation.attributeName === 'data-bamx-auction') {
+          console.log('Narrativ Auction has finished. Update display values now');
+          console.log(anchor.getAttribute('data-bamx-auction'));
+          // Your custom update function here.
+        }
+      }
+    };
+
+    const observer = new MutationObserver(logFunction);
+    observer.observe(anchor, config);
+  }
+
+.. _MutationObserver: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 
 .. _hello@narrativ.com: mailto:hello@narrativ.com
