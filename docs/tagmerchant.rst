@@ -82,14 +82,6 @@ just leave it out if you choose not to include the data.
      - string
      - Required. The name of the product.
 
-   * - product_category
-     - string
-     - Optional. The `Google category`_ of the product.
-
-   * - product_brand
-     - string
-     - Optional. The brand of the product.
-
    * - product_price
      - float
      - Required. The price of the product.
@@ -98,10 +90,22 @@ just leave it out if you choose not to include the data.
      - integer
      - Required. The number of this product purchased in this order.
 
-Full Example (remember, replace "ACCOUNT NAME" with your Narrativ account name)
+   * - product_category
+     - string
+     - Optional. The `Google category`_ of the product.
+
+   * - product_brand
+     - string
+     - Optional. The brand of the product.
+
+   * - product_image
+     - string
+     - Optional. The URL of the product image.
+
+Full Example
 
 What you see below is just an example. You cannot copy and paste it as is. Insert the check out
-information from your own page into our data layer using Javascript before loading the Narrativ tag.
+information from your own page into our data layer using Javascript before loading the Narrativ tag. Remember to replace "accountname" with your Narrativ account name.
 
 ::
 
@@ -116,8 +120,9 @@ information from your own page into our data layer using Javascript before loadi
             product_name: purchased[i].ItemName,
             product_category: purchased[i].ItemCategory,
             product_brand: purchased[i].ItemBrand,
+            product_image: purchased[i].ItemImageUrl,
             product_price: purchased[i].ItemPrice,
-            product_quantity: purchased[i].ItemQuantity
+            product_quantity: purchased[i].ItemQuantity,
           });
           orderTotal += product_price;
         }
@@ -129,7 +134,7 @@ information from your own page into our data layer using Javascript before loadi
             products_purchased: productsPurchased,
             order_id: {{OrderID}},
             order_value: orderTotal,
-            currency: {{CurrencyCode}}
+            currency: {{CurrencyCode}},
         };
 
         (function(account) {
@@ -138,10 +143,11 @@ information from your own page into our data layer using Javascript before loadi
               b.type = "text/javascript";
               b.src = "//static.narrativ.com/tags/" + account + ".js";
               b.async = true;
+
               var a = document.getElementsByTagName("script")[0];
               a.parentNode.insertBefore(b, a);
             } catch (e) {}
-        }("ACCOUNT NAME"));
+        }("accountname"));
     </script>
     <!-- End Narrativ Jstag -->
 
