@@ -113,6 +113,10 @@ having the following structure:
             - string
             - The retrieved product's name
 
+        - merchant_name
+            - string
+            - The name of the merchant selling the retrieved product
+
 
 URL Encoding
 ------------
@@ -146,7 +150,8 @@ Example Response
                     "in_stock": true,
                     "gtin": "55555555555555",
                     "image_url": "https://merchant.example/path/to/image_url",
-                    "brand": "Example Brand"
+                    "brand": "Example Brand",
+                    "merchant_name": "Example Retailer"
                 },
                 "clickmate_link": "https://shop-links.co/link/?url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0Aexclusive=1&publisher_slug=myacct",
                 "best_effort_cpc": 0.50,
