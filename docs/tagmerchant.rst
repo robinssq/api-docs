@@ -102,6 +102,14 @@ just leave it out if you choose not to include the data.
      - string
      - Optional. The URL of the product image.
 
+   * - product_size
+     - string
+     - Optional. The size of the product.
+
+   * - product_color
+     - string
+     - Optional. The color of the product.
+
 Full Example
 
 What you see below is just an example. You cannot copy and paste it as is. Insert the check out
@@ -120,6 +128,8 @@ information from your own page into our data layer using Javascript before loadi
             product_name: purchased[i].ItemName,
             product_category: purchased[i].ItemCategory,
             product_brand: purchased[i].ItemBrand,
+            product_size: purchased[i].ItemSize,
+            product_color: purchased[i].ItemColor,
             product_image: purchased[i].ItemImageUrl,
             product_price: purchased[i].ItemPrice,
             product_quantity: purchased[i].ItemQuantity,
