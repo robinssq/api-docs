@@ -10,9 +10,6 @@ it, on the fly, to a SmartLink. This means that the link will go through our
 matching process, and on future clicks will work through our real time
 auction system and will re-route to the most beneficial advertiser.
 
-Your account must be a member of our LinkMate program to use this feature.
-For more information about this program, feel free to `contact us`_.
-
 
 
 Build a ClickMate Link
@@ -60,7 +57,7 @@ Query Params
 
    * - article_name
      - string(100)
-     - The name or title of the article your link is coming from. *Optional* We require either this or `aritcle_url` (or both) to correctly group and monetize links
+     - The name or title of the article your link is coming from. *Optional* We require either this or `article_url` (or both) to correctly group and monetize links
 
    * - publisher_slug
      - string(64)

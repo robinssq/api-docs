@@ -9,9 +9,6 @@ we will return a set of monetizable :ref:`ClickMate <clickmate_overview>`
 links, along with our point-in-time estimate of the CPC for
 each product in the result set.
 
-Your account must be a member of our LinkMate program to use this feature.
-For more information about this program, feel free to `contact us`_.
-
 
 Request
 ^^^^^^^
