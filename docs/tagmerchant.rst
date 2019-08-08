@@ -1,25 +1,25 @@
-Narrativ Advertiser Tag
+Narrativ Merchant Tag
 =======================
 
 Functionality
 -------------
 
-The Narrativ advertiser tag allows Narrativ to track user behavior on an advertiser's site. Our auction system 
-optimizes advertiser acquisition and ROI by analyzing data on page views and purchase behavior. No Personal 
-Identifying Information (PII) is captured. The tag runs asynchronously in the background so there is no impact to page 
+The Narrativ merchant tag allows Narrativ to track user behavior on an merchant's site. Our auction system
+optimizes merchant acquisition and ROI by analyzing data on page views and purchase behavior. No Personal
+Identifying Information (PII) is captured. The tag runs asynchronously in the background so there is no impact to page
 load times.
 
 Implementation
 --------------
 
-We track two types of events for our partners - check outs and page views:
+We track two types of events for our partners - checkouts and page views:
 
-* Place the check out tag on the page that loads after your customer has finished shopping and paid
+* Place the checkout tag on the page that loads *after* your customer has finished shopping and paid
   for their purchase (your site's equivalent of a "Thank you for your order" page).
 
 * Place the page view tag on every other page that loads during your user's journey, so that we can
-  empower you with data on what products they are looking at before they check out.
-  Important! Replace "ACCOUNT NAME" with your Narrativ account name in all snippets. Reach out to
+  empower you with data on what products customers are looking at before they check out.
+  *Important! Replace "ACCOUNT NAME" with your Narrativ account name in all snippets.* Reach out to
   hello@narrativ.com for help with your Narrativ account name as needed.
 
 Adding Information About Your Checkout Page
@@ -27,10 +27,10 @@ Adding Information About Your Checkout Page
 
 
 For checkout events, you have to fill in some information about the checkout before loading our Javascript. This is
-done by inserting the relevant data into a variable called window.BAMX_EVENT_DATA. If a field is optional, you can
-just leave it out if you choose not to include the data.
+done by inserting the relevant data into a variable called ``window.BAMX_EVENT_DATA``. If a field is optional, you can
+leave it out if you choose not to include the data.
 
-*window.BAMX_EVENT_DATA*
+**window.BAMX_EVENT_DATA**
 
 .. list-table::
    :widths: 30 10 60
@@ -64,7 +64,7 @@ just leave it out if you choose not to include the data.
      - array
      - Required. An array of Product objects representing the purchased items, as defined below.
 
-*Product*
+**products_purchased** (array)
 
 .. list-table::
    :widths: 30 10 60
@@ -110,10 +110,12 @@ just leave it out if you choose not to include the data.
      - string
      - Optional. The color of the product.
 
-Full Example
+**Full Example**
 
-What you see below is just an example. You cannot copy and paste it as is. Insert the check out
-information from your own page into our data layer using Javascript before loading the Narrativ tag. Remember to replace "accountname" with your Narrativ account name.
+Below is an example of what your implementation might look like. However, don't copy and paste it as is. Insert the checkout
+information from your own page into our data layer using Javascript before loading the Narrativ tag.
+
+Remember to replace "accountname" with your Narrativ account name.
 
 ::
 
@@ -134,7 +136,7 @@ information from your own page into our data layer using Javascript before loadi
             product_price: purchased[i].ItemPrice,
             product_quantity: purchased[i].ItemQuantity,
           });
-          orderTotal += product_price;
+          orderTotal += (purchased[i].ItemPrice * purchased[i].ItemQuantity);
         }
 
         window.BAMX_EVENT_DATA = {
@@ -165,10 +167,10 @@ information from your own page into our data layer using Javascript before loadi
 Adding Information for the Page View Tag
 ----------------------------------------
 
-The page view tag goes on every page except for pages with PII. Remember to change "ACCOUNT NAME" to your Narrativ 
+The page view tag goes on every page except for pages with PII. Remember to change "ACCOUNT NAME" to your Narrativ
 account name.
 
-What you see below is another example. You cannot copy and paste it as is. Insert the page view
+Below is another example of what your implementation might look like. Don't copy and paste it as is. Insert the page view
 information into our data layer using Javascript before loading the Narrativ tag.
 
 ::
@@ -191,15 +193,17 @@ information into our data layer using Javascript before loading the Narrativ tag
 Google Tag Manager Walkthrough
 ------------------------------
 
-Below is a walkthrough for implementing the Narrativ pixel using a "Custom HTML" tag in Google Tag Manager.
+Below are instructions for implementing the Narrativ pixel using a "Custom HTML" tag in Google Tag Manager.
 Start by navigating to your Google Tag Manager Dashboard.
 
 
-- Select "Tag Configuration" to begin making a new pixel.
+- Select the "Tags" menu item from the menu on the left-hand side of the page.
+- Once in the "Tags" menu, select the "New" button to create a new tag.
+- Select the "Tag Configuration" box to begin making a new pixel.
 
 .. image:: _static/pixel_implementation_screenshots/1_tap_configuration.png
 
-- Select "Custom HTML" to open a text field to copy and paste the above code. Make sure you replace "ACCOUNT NAME" with your Narrativ account name.
+- Select the "Custom HTML" option to open a text field, and copy and paste the above code for the **Page View Tag**. Make sure you replace *"ACCOUNT NAME"* with your Narrativ account name.
 
 .. image:: _static/pixel_implementation_screenshots/2_choose_custom_html.png
 
