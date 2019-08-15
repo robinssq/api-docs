@@ -98,6 +98,10 @@ having the following structure:
      - integer
      - The ID of the particular article.
 
+   * - article_url
+     - string
+     - The URL of the particular article.
+
    * - merch_id
      - integer
      - The ID of the merchant.
@@ -116,7 +120,7 @@ having the following structure:
 
    * - event_date
      - string
-     - The date assoicated with this entry.
+     - The date associated with this entry.
 
    * - clicks
      - integer
@@ -145,6 +149,7 @@ Get statistics grouped by articles and merchants per day between 2018-03-11 and 
                 "advertiser_attributed_sales": 60,
                 "pub_earnings": "10.25",
                 "article_id": 1,
+                "article_url": "https://www.merchant-name-a.com/article?=1",
                 "merch_id": 10,
                 "impressions": 200,
                 "advertiser_attributed_revenue": "150.00",
@@ -158,6 +163,7 @@ Get statistics grouped by articles and merchants per day between 2018-03-11 and 
                 "advertiser_attributed_sales": 600,
                 "pub_earnings": "99.75",
                 "article_id": 1,
+                "article_url": "https://www.merchant-name-a.com/article?=2",
                 "merch_id": 10,
                 "impressions": 700,
                 "advertiser_attributed_revenue": "350.00",
