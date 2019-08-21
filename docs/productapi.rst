@@ -125,11 +125,11 @@ Example Requests
 
 ::
 
-    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&gtin=77777777777
+    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&gtin=77777777777&article_url=https%3A%2F%2Fwww.publisher.example%2Fstory%2Fmyarticle&article_name=myarticle
 
-    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&sku=00000000&&gtin=88888888888888
+    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&sku=00000000&&gtin=88888888888888&article_url=https%3A%2F%2Fwww.publisher.example%2Fstory%2Fmyarticle&article_name=myarticle
 
-    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&sku=00000000&&gtin=99999999999999&product_url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0A
+    GET /api/v1/product_match/clickmate/exclusive_links/?publisher_slug=myacct&sku=00000000&&gtin=99999999999999&product_url=https%3A%2F%2Fwww.merchant.example%2Fproduct%2F123%0A&article_url=https%3A%2F%2Fwww.publisher.example%2Fstory%2Fmyarticle&article_name=myarticle
 
 
 Example Response
