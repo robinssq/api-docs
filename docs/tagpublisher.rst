@@ -71,9 +71,17 @@ Toggle LinkMate
 
     http://amazon.com.example/BF93JSD34/ref=ods?#donotlink
 
-* To indicate an exclusive link, add ``#locklink`` to the end of the URL::
+* To indicate an exclusive link, update your link in one of the following two ways:
 
-    http://amazon.com.example/BF93JSD34/ref=ods?#locklink
+    * Add a ``rel="noauction"`` attribute to your link::
+
+        <a href="http://amazon.com.example/BF93JSD34/ref=ods?" rel="noauction">
+            Example Product
+        </a>
+
+    * Add ``#locklink`` to the end of the URL::
+
+        http://amazon.com.example/BF93JSD34/ref=ods?#locklink
 
 Updating Article Content with Auction Results
 ---------------------------------------------
