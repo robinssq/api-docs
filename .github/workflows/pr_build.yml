@@ -1,0 +1,14 @@
+name: PR Build
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build docker image
+        run: make docker-build
+      - name: Build documentation
+        run: make docker-sphinx
