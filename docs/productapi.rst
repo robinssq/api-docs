@@ -1,5 +1,5 @@
 Multi-Match Exclusive API
-============
+=========================
 
 Overview
 --------
@@ -34,7 +34,7 @@ Request
    * - sku
      - string(255)
      - **Product descriptor** (*Optional - see below*): the SKU of the product - used as an identifier to find matches in Narrativ merchant network
-   
+
    * - article_url
      - string(2048)
      - **Article info** (*Required*): The URL of the article or page the link is published on (must be URL encoded!)
@@ -45,7 +45,7 @@ Request
 
 
 Identifier Parameters
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 **Please Note:** at least one identifier (``gtin``, ``sku``) must be present for this endpoint.
 
 

@@ -89,7 +89,7 @@ LinkMate: Automatic SmartLink Retrieval
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If your publisher account is a member of our LinkMate program, you can also
-use the :doc:`LinkMate API <linkmate>` to retrieve SmartLink Auction IDs for
+use the LinkMate API to retrieve SmartLink Auction IDs for
 the raw URLs in your article. Our systems will automatically create any
 SmartLinks that do not already exist, so that you no longer need to create
 them manually in the Chrome Extension.

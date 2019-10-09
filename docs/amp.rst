@@ -8,7 +8,7 @@ Usage
 
 In addition to the docs below, you may reference the information provided on AMP's `Github`_ page.
 
-AMP Smartlinks searches the AMP article for Smartlink-compatible URLs, automatically creating new SmartLinks that do not already exist. AMP Smartlinks is our full :ref:`Linkmate <linkmate_api>` offering in AMP.
+AMP Smartlinks searches the AMP article for Smartlink-compatible URLs, automatically creating new SmartLinks that do not already exist. AMP Smartlinks is our full Linkmate offering in AMP.
 
 Your account must be a member of our LinkMate program to use this feature. For more information about this program, feel free to `contact us`_
 
@@ -75,6 +75,7 @@ AMP Attribute values
 
 
 * To make all LinkMate links on the page exclusive, you can use the ``exclusiveLinks`` flag in the ``amp-smartlinks`` element. Exclusive links means that links will only be matched to the original merchant.
+
  ::
 
    <amp-smartlinks
@@ -85,6 +86,7 @@ AMP Attribute values
    </amp-smartlinks>
 
 * If you are running ``amp-smartlinks`` with other affiliate tags then you have to specify the following element with the ordering you want your links to be monetized.
+
  ::
 
    ...
@@ -100,6 +102,7 @@ AMP Attribute values
      </amp-smartlinks>
 
 * If you do not use ``href`` attributes to specify the outbound links, then make sure to specify ``link-attribute`` in the element. Also, if you want to limit the selector used to detect links use ``link-selector``.
+
  ::
 
      <amp-smartlinks
@@ -111,11 +114,13 @@ AMP Attribute values
      </amp-smartlinks>
 
 * To disable LinkMate on a specific link, add ``#donotlink`` to the end of the URL
+
 ::
 
    http://exampleproductlink.example/supercoolproduct/ref=ods?#donotlink
 
 * To indicate an exclusive link, add ``#locklink`` to the end of the URL
+
 ::
 
    http://exampleproductlink.example/supercoolproduct/ref=ods?#locklink

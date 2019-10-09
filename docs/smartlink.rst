@@ -1,8 +1,8 @@
 Dynamic API
-==========
+===========
 
 Create a new Narrativ Dynamic Link (SmartLink)
-----------------------
+----------------------------------------------
 
 Request
 ^^^^^^^

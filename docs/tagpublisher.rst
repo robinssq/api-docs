@@ -11,7 +11,7 @@ the auctions, allowing the destination of the links to be updated ahead of time.
 **Please Note:** The tag identifies each link in our system by the product url and page url. If your website uses dynamic values (such as user or session id) in either the product or page urls please inform your Narrativ rep to ensure correct functionality
 
 Core Implementation
---------------
+-------------------
 
 Getting the publisher tag to run successfully is a simple process. Copy and paste the following Javascript snippet
 in the HEAD section of all your site's pages.
@@ -40,7 +40,7 @@ in the HEAD section of all your site's pages.
 .. _setup: https://dashboard.narrativ.com/#/publisher/account/setup
 
 Link Rewriting
------
+--------------
 
 This is a feature of our JavaScript tag that must best be enabled in your account settings. Once enabled, the tag will automatically scan your article and convert any regular links to SmartLinks.
 

@@ -27,7 +27,6 @@ browse the full documentation below:
    smartlink
    clickmate
    productapi
-   linkmate
    auction
    amp
    events
