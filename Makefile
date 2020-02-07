@@ -45,9 +45,11 @@ sh:
 ######################################
 
 pip-compile:
-	docker run -it --rm -v ${DIR}/conf:/opt/bamx/conf bamx/api-docs pip-compile --rebuild --generate-hashes --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt
+	docker run -it --rm -v "${DIR}/conf:/opt/bamx/conf" "bamx/api-docs:${IMAGE_VERSION}" /bin/sh -c \
+		"pip-compile --rebuild --generate-hashes --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt"
 
 # The --allow-unsafe flag is arguably more safe to include than to omit.
 # See https://github.com/jazzband/pip-tools/issues/806 for details
 pip-upgrade:
-	docker run -it --rm -v ${DIR}/conf:/opt/bamx/conf bamx/api-docs pip-compile --upgrade --rebuild --generate-hashes --allow-unsafe --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt
+	docker run -it --rm -v "${DIR}/conf:/opt/bamx/conf" "bamx/api-docs:${IMAGE_VERSION}" /bin/sh -c \
+		"pip-compile --upgrade --rebuild --generate-hashes --allow-unsafe --output-file conf/requirements.txt conf/unpinned-requirements.txt && chown ${HOST_UID}:${HOST_GID} conf/requirements.txt"
