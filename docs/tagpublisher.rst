@@ -124,3 +124,40 @@ Below is an example JS snippet that will create a `MutationObserver`_, on all re
 .. _MutationObserver: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 
 .. _hello@narrativ.com: mailto:hello@narrativ.com
+
+User Tracking
+---------------------------------------------
+The Narrativ publisher tag also provides user tracking for clicks and checkouts via an appendable U1 Parameter.
+
+To add the U1 parameter to Narrativ events, add the following snippet to your Narrativ tag script:
+::
+
+    window.BAMX_EVENT_DATA = { u1Param: yourU1Param };
+
+Replace ``yourU1Param`` with your U1 Parameter variable
+
+Once added, your Javascript tag should look like this:
+
+::
+
+    <script type="text/javascript">
+        (function(window, document, account) {
+            window.skimlinks_exclude = ["shop-links.co", "shop-edits.co"];
+            window.BAMX_EVENT_DATA = { u1Param: yourU1Param };
+            var b = document.createElement("script");
+            b.type = "text/javascript";
+            b.src = "https://static.narrativ.com/tags/" + account + ".js";
+            b.async = true;
+            var a = document.getElementsByTagName("script")[0];
+            a.parentNode.insertBefore(b,a);
+        })(window, document, "ACCOUNT NAME");
+    </script>
+
+The U1 Parameter can be included in click and order reports.
+Please contact your account manager or support@narrativ.com for more details.
+
+**Note**: This implementation is specific for Linkmate integrations.
+For using U1 Parameters with a Clickmate integration,
+see `Clickmate Query Parameters`_.
+
+.. _Clickmate Query Parameters: https://docs.narrativ.com/en/stable/clickmate.html#query-params
