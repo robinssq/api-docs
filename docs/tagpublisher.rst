@@ -4,19 +4,27 @@ Narrativ Publisher Tag
 Functionality
 -------------
 
-The Narrativ publisher tag is a lightweight JavaScript tag that serves two main purposes. First, it will track user behavior
-such as page views, Narrativ link impressions and clicks. Second, it will find all eligible commerce links on the page and run
-the auctions, allowing the destination of the links to be updated ahead of time.
+The Narrativ publisher tag is a light-weight tag that has two operational modes: Audit Mode and Active Mode.
 
-**Please Note:** The tag identifies each link in our system by the product url and page url. If your website uses dynamic values (such as user or session id) in either the product or page urls please inform your Narrativ rep to ensure correct functionality
+Audit Mode
+^^^^^^^^^^
 
-Narrativ Audit Tag
-------------------
+Audit Mode allows us to size the opportunity for Out of Stock link repair and scopes the size of
+integration.  This mode also allows us to identify additional retailers that sell your recommended
+products, diversifying your content monetization.
 
-The Narrativ Audit Tag is a passive tag that allows us to begin collecting data and size the scope of integration.
+Active Mode
+^^^^^^^^^^^
 
-Getting the Narrativ Audit Tag to run successfully is a simple process. Copy and paste the following Javascript snippet
-in the HEAD section of all your site's pages.
+Active Mode contains the features of Audit Mode, and enables Narrativ's link monetization features.
+The active tag finds all eligible commerce links on the page and runs Narrativ tracking and optimization.
+Reporting on links can be found in the Narrativ dashboard.
+
+Audit Mode Implementation
+-------------------------
+
+Getting the Narrativ tag to successfully run in Audit Mode is a simple process.
+Copy and paste the following Javascript snippet in the HEAD section of all your site's pages.
 
 * Make sure to replace "ACCOUNT NAME" with your Narrativ account name.
 * Need to know your Narrativ account name? Log into dashboard.narrativ.com and go to `setup`_ to see the snippet
@@ -40,22 +48,18 @@ in the HEAD section of all your site's pages.
     </script>
 
 
-Narrativ Active Tag
--------------------
+Active Mode Implementation
+--------------------------
 
-The Narrativ Active Tag is a live tag that enables Narrativ's core technical features. Once added,
-the tag will enable our auction system, begin matching product links to other merchants in our system,
-and will rewrite static links to Narrativ smart links.
-
-Updating the Audit Tag to the Active tag is a small, one-line change. Simply remove the following line
-from the Audit Tag to enable the Active Tag:
+Updating the tag from Audit Mode to Active Mode is a small, one-line change.
+Simply remove the following line from the audit tag to enable Active Mode:
 
 ::
 
     window.NRTV_EVENT_DATA = { donotlink: true };
 
-If you aren't currently using the Audit Tag, copy and paste the following Javascript snippet
-in the HEAD section of all your site's pages.
+If you aren't currently using the tag in Audit Mode, copy and paste the following Javascript
+snippet in the HEAD section of all your site's pages.
 
 * Make sure to replace "ACCOUNT NAME" with your Narrativ account name.
 * Need to know your Narrativ account name? Log into dashboard.narrativ.com and go to `setup`_ to see the snippet
@@ -77,36 +81,30 @@ in the HEAD section of all your site's pages.
         })(window, document, "ACCOUNT NAME");
     </script>
 
-**NOTE**: Please inform your Narrativ representative or contact us at `hello@narrativ.com`_ when you've placed our Active Tag,
-as we must flip a switch on our end to begin rewriting links.
+**Please Note**: The tag identifies each link in our system by the product url and page url.
+If your website uses dynamic values (such as user or session id) in either the product or
+page urls please inform your Narrativ representative to ensure correct functionality
 
 .. _setup: https://dashboard.narrativ.com/#/publisher/account/setup
 
-Active Tag Capabilities: Toggling Link Rewrites
------------------------------------------------
+Active Mode Capabilities: Link Rewrite Options
+----------------------------------------------
 
-* To enable or disable link rewriting globally for your publisher account, contact us at `hello@narrativ.com`_
-
-* Once this feature is enabled on your publisher account, you can toggle it on or off across your entire site
-  by updating the Narrativ window object
-  ::
-
-    window.NRTV_EVENT_DATA.linkmate = true;
-
-* Once this feature is enabled on your publisher account, you can toggle it on and off on a
-  specific article by updating the Narrativ window object
+* Once Active Mode is enabled, you can toggle it on and off on a specific article
+  by updating the Narrativ window object:
   ::
 
     window.NRTV_EVENT_DATA.donotlink = true;
+
+
+* To disable link rewrite on a specific link, add ``#donotlink`` to the end of the URL::
+
+    http://amazon.com.example/BF93JSD34/ref=ods?#donotlink
 
 * To make all links on the page exclusive (meaning each link is locked to a merchant), you can use the ``exclusiveLinks`` flag on the Narrativ window object.
   ::
 
     window.NRTV_EVENT_DATA.exclusiveLinks = true;
-
-* To disable link rewrite on a specific link, add ``#donotlink`` to the end of the URL::
-
-    http://amazon.com.example/BF93JSD34/ref=ods?#donotlink
 
 * To indicate an exclusive link, update your link in one of the following two ways:
 
@@ -120,12 +118,18 @@ Active Tag Capabilities: Toggling Link Rewrites
 
         http://amazon.com.example/BF93JSD34/ref=ods?#locklink
 
-Active Tag Capabilities: Dynamic Display
-----------------------------------------
+Active Tag Capabilities: Dynamic price and merchant names (Out of Stock optimization)
+-------------------------------------------------------------------------------------
 
-As discussed above, one main benefit of the Narrativ JsTag is to find commerce links on your site and run the auctions on page load. For publishers whose commerce buttons or article content mention the merchant's name and product price (“$5 at Nordstrom”), this feature will enable you to update those values dynamically.
+As discussed above, one main benefit of the Narrativ JsTag is to find commerce links on your
+site and run the auctions on page load. For publishers whose commerce buttons or article
+content mention the merchant's name and product price (“$5 at Nordstrom”), this feature will
+enable you to update those values dynamically.
 
-After an auction completes, the Narrativ tag will write the output of the auction to the `data-bamx-auction` attribute. In that attribute, you can find product price, retailer name, image_url, etc. to update the article information for a link. A full list of the auction response can be found on our :doc:`Auction <auction>` page.
+After an auction completes, the Narrativ tag will write the output of the auction to the
+`data-bamx-auction` attribute. In that attribute, you can find product price,
+retailer name, image_url, etc. to update the article information for a link.
+A full list of the auction response can be found on our :doc:`Auction <auction>` page.
 
 Updating Your Buttons
 ^^^^^^^^^^^^^^^^^^^^^
