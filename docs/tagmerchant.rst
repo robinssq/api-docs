@@ -1,181 +1,62 @@
-Narrativ Merchant Tag
-=====================
+Narrativ Brand Tag
+==================
 
-Functionality
--------------
+What is it?
+-----------
 
-The Narrativ merchant tag allows Narrativ to track user behavior on a merchant's site. Our auction system
-optimizes merchant acquisition and ROI by analyzing data on page views and purchase behavior. No Personal
-Identifying Information (PII) is captured. The tag runs asynchronously in the background so there is no impact
-to page load times.
+The Narrativ Brand Tag is a lightweight javascript tag that enables partners maximize their performance
+and unlock valuable article and product level insights in a customized dashboard.
+Only clients with Narrativ’s Brand Tag can optimize their campaigns by ROAS and see more comprehensive
+metrics like revenue and RPC.
+
+Plus, brands with the Narrativ Brand Tag will open themselves up to be discovered by editors.
+When it’s on your site, publishers can access top performing SKUs, sales data and new product launches
+to inspire future recommendations.
+
+
+How it Works
+------------
+
+The Narrativ Brand Tag is responsible for handling two types of events: page impressions and checkouts.
+
+Page Impressions
+^^^^^^^^^^^^^^^^
+
+Page impression events enable Narrativ to ensure attribution for our partners.
+These events should be fired on every page that doesn’t contain PII.
+
+**Please note:** This data collection does not contain PII and is in compliance with GDPR and CCPA.
+
+Checkouts
+^^^^^^^^^
+
+Checkout events allow Narrativ to accurately capture revenue and conversions in real time.
+The data gathered by checkout events also powers an experience publishers rely on to track
+top sellers and give better product recommendations on their articles.
+
+Checkout events should be fired on your site’s **Order Confirmation Page**, or the page that loads
+immediately **after** they’ve *successfully* purchased their items.
+
+**Please note:** Similar to Page Impression, Checkouts are in compliance with GDPR and CCPA
+and does not capture personally identifiable information (PII). Additionally, since the tag
+runs asynchronously in the background, there is no impact to the page load time.
+
 
 Implementation
 --------------
 
-We track two types of events for our partners - checkouts and page views:
+Page Impression Events
+^^^^^^^^^^^^^^^^^^^^^^
+Getting the Narrativ Brand Tag to fire page impression events is a simple process.
+Copy and paste the following Javascript snippet in the HEAD section of all your
+site’s pages *that don’t contain PII*.
 
-* Place the checkout tag on the page that loads *after* your customer has finished shopping and paid
-  for their purchase (your site's equivalent of a "Thank you for your order" page).
+* Make sure to replace `ACCOUNT NAME` with your Narrativ account name.
 
-* Place the page view tag on every other page that loads during your user's journey, so that we can
-  empower you with data on what products customers are looking at before they check out.
-  *Important! Replace "accountname" with your Narrativ account name in all snippets.* Reach out to
-  hello@narrativ.com for help with your Narrativ account name as needed.
-
-Adding Information About Your Checkout Page
--------------------------------------------
-
-
-For checkout events, you have to fill in some information about the checkout before loading our Javascript. This is
-done by inserting the relevant data into a variable called ``window.BAMX_EVENT_DATA``. If a field is optional, you
-can leave it out if you choose not to include the data.
-
-**window.BAMX_EVENT_DATA**
-
-.. list-table::
-   :widths: 30 10 60
-   :header-rows: 1
-
-   * - Field Name
-     - Type
-     - Description
-
-   * - page_type
-     - string
-     - Required. Must be "checkout" to tell the tag to fire a checkout event.
-
-   * - user_id
-     - string
-     - Optional. The ID the user has in your system, if available.
-
-   * - order_id
-     - string
-     - Required. The unique order_id for the checkout that just completed.
-
-   * - order_value
-     - float
-     - Required. The total purchase price of the order.
-
-   * - currency
-     - string
-     - Required. The three digit code for the currency that order_value is in (ex: 'USD'). Uses `ISO 4217`_
-
-   * - products_purchased
-     - array
-     - Required. An array of Product objects representing the purchased items, as defined below.
-
-**products_purchased** (array)
-
-.. list-table::
-   :widths: 30 10 60
-   :header-rows: 1
-
-   * - Field Name
-     - Type
-     - Description
-
-   * - product_id
-     - string
-     - Required. The unique identifier for this product.
-
-   * - product_name
-     - string
-     - Required. The name of the product.
-
-   * - product_price
-     - float
-     - Required. The price of the product.
-
-   * - product_quantity
-     - integer
-     - Required. The number of this product purchased in this order.
-
-   * - product_category
-     - string
-     - Optional. The `Google category`_ of the product.
-
-   * - product_brand
-     - string
-     - Optional. The brand of the product.
-
-   * - product_image
-     - string
-     - Optional. The URL of the product image.
-
-   * - product_size
-     - string
-     - Optional. The size of the product.
-
-   * - product_color
-     - string
-     - Optional. The color of the product.
-
-**Full Example**
-
-The example below is what your implementation might look like. However, don't copy and paste it as is. Insert the checkout
-information from your own page into our data layer using Javascript before loading the Narrativ tag.
-
-Remember to replace "accountname" with your Narrativ account name.
+* Need your Narrativ account name? Reach out to your growth manager or `support@narrativ.com` for assistance.
 
 ::
 
-    <!-- Begin Narrativ Jstag -->
-    <script type="text/javascript">
-        var purchased = window.dataLayer[3]['OrderItems'];
-        var productsPurchased = [];
-        var orderTotal = 0;
-        for (var i = 0; i < purchased.length; i++) {
-          productsPurchased.push({
-            product_id: purchased[i].ItemID,
-            product_name: purchased[i].ItemName,
-            product_category: purchased[i].ItemCategory,
-            product_brand: purchased[i].ItemBrand,
-            product_size: purchased[i].ItemSize,
-            product_color: purchased[i].ItemColor,
-            product_image: purchased[i].ItemImageUrl,
-            product_price: purchased[i].ItemPrice,
-            product_quantity: purchased[i].ItemQuantity,
-          });
-          orderTotal += (purchased[i].ItemPrice * purchased[i].ItemQuantity);
-        }
-
-        window.BAMX_EVENT_DATA = {
-            page_type: 'checkout',
-            user_id: {{UserID}},
-            is_new_visitor: {{RegisteredCustomer}},
-            products_purchased: productsPurchased,
-            order_id: {{OrderID}},
-            order_value: orderTotal,
-            currency: {{CurrencyCode}},
-        };
-
-        (function(account) {
-            try {
-              var b = document.createElement("script");
-              b.type = "text/javascript";
-              b.src = "https://static.narrativ.com/tags/" + account + ".js";
-              b.async = true;
-
-              var a = document.getElementsByTagName("script")[0];
-              a.parentNode.insertBefore(b, a);
-            } catch (e) {}
-        }("accountname"));
-    </script>
-    <!-- End Narrativ Jstag -->
-
-
-Adding Information for the Page View Tag
-----------------------------------------
-
-The page view tag goes on every page except for pages with PII. Remember to change "accountname" to your Narrativ
-account name.
-
-The example below is what your implementation might look like. Don't copy and paste it as is. Insert the page view
-information into our data layer using Javascript before loading the Narrativ tag.
-
-::
-
-  <!-- Begin Narrativ Jstag -->
   <script type="text/javascript">
       (function(account) {
           try {
@@ -186,48 +67,164 @@ information into our data layer using Javascript before loading the Narrativ tag
               var a = document.getElementsByTagName("script")[0];
               a.parentNode.insertBefore(b, a);
           } catch (e) {}
-      }("accountname"));
+      }("ACCOUNT NAME"));
   </script>
-  <!-- End Narrativ Jstag -->
+
+Checkout Events
+^^^^^^^^^^^^^^^
+
+In order to successfully fire checkout events with the Narrativ Brand Tag, the following code snippet
+must be populated with information about the checkout, along with a few details about each of
+the products purchased. This snippet should be placed on your site’s **Order Confirmation Page**,
+or the page displayed to customers immediately after they’ve *successfully* purchased their items.
+
+Make the Checkout Event Code Work for You
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow the sample code below, making these changes:
+
+.. list-table::
+   :widths: 40 60
+   :header-rows: 1
+
+   * - Statement
+     - Requirement
+
+   * - `var purchased = <dataLayerProducts>;`
+     - Replace `<dataLayerProducts>` with the list of purchased products in your data layer.
+       Each item in this list represents attributes of a single purchased product (explained in the following items).
+
+   * - `product_id: purchased[i].<ItemID>,`
+     - Replace `<ItemID>` with the variable name your data layer uses to define item ID, or the unique identifier
+       for the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+
+   * - `product_name: purchased[i].<ItemName>,`
+     - Replace `<ItemName>` with the variable name your data layer uses to define item name, or the name
+       for the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+
+   * - `product_price: purchased[i].<ItemPrice>,`
+     - Replace `<ItemPrice>` with the variable name your data layer uses to define item price, or the *per-unit price*
+       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+
+   * - `product_quantity: purchased[i].<ItemQuantity>,`
+     - Replace `<ItemQuantity>` with the variable name your data layer uses to define item quantity, or the quantity
+       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+
+   * - `product_brand: purchased[i].<ItemBrand>,`
+     - Replace `<ItemBrand>` with the variable name your data layer uses to define item brand, or the brand
+       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+
+       Note: If Item Brand is not available, replace `<ItemBrand>` with `null`
+
+   * - `product_size: purchased[i].<ItemSize>,`
+     - Replace `<ItemSize>` with the variable name your data layer uses to define item size, or the size
+       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+
+       Note: If Item Size is not available, replace `<ItemSize>` with `null`
+
+   * - `product_color: purchased[i].<ItemColor>,`
+     - Replace `<ItemColor>` with the variable name your data layer uses to define item color, or the color
+       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+
+       Note: If Item Color is not available, replace `<ItemColor>` with `null`
+
+   * - `orderTotal += (purchased[i].<ItemPrice> * purchased[i].<ItemQuantity>);`
+     - Replace `<ItemPrice>` and `<ItemQuantity>` with the same respective values used above.
+
+   * - `is_new_visitor: <IsNewVisitor>,`
+     - Replace `<IsNewVisitor>` with a boolean (true/false) indicating if the customer is new to your site.
+
+       Note: If this is not available, replace `<RegisteredCustomer>` with `null`
+
+   * - `order_id: <OrderID>,`
+     - Replace `<OrderID>` with the order ID, a unique identifier for the order.
+
+   * - `currency: <CurrencyCode>,`
+     - Replace <CurrencyCode> with the three digit currency code that order was placed in (ex: ‘USD’). Uses `ISO 4217`_
+
+**Note:** Remember to also replace `ACCOUNT NAME` with your Narrativ account name.
+
+::
+
+    <script type="text/javascript">
+        var purchased = <dataLayerProducts>;
+        var productsPurchased = [];
+        var orderTotal = 0;
+        for (var i = 0; i < purchased.length; i++) {
+          productsPurchased.push({
+            product_id: purchased[i].<ItemID>,
+            product_name: purchased[i].<ItemName>,
+            product_brand: purchased[i].<ItemBrand>,
+            product_size: purchased[i].<ItemSize>,
+            product_color: purchased[i].<ItemColor>,
+            product_price: purchased[i].<ItemPrice>,
+            product_quantity: purchased[i].<ItemQuantity>,
+          });
+          orderTotal += (purchased[i].<ItemPrice> * purchased[i].<ItemQuantity>);
+        }
+
+        window.BAMX_EVENT_DATA = {
+            page_type: 'checkout',
+            is_new_visitor: <IsNewVisitor>,
+            products_purchased: productsPurchased,
+            order_id: <OrderID>,
+            order_value: orderTotal,
+            currency: <CurrencyCode>,
+        };
+
+        (function(account) {
+            try {
+              var b = document.createElement("script");
+              b.type = "text/javascript";
+              b.src = "https://static.narrativ.com/tags/" + account + ".js";
+              b.async = true;
+              var a = document.getElementsByTagName("script")[0];
+              a.parentNode.insertBefore(b, a);
+            } catch (e) {}
+        }("ACCOUNT NAME"));
+    </script>
+
 
 Google Tag Manager Walkthrough
 ------------------------------
 
-The instructions below are for implementing the Narrativ pixel using a "Custom HTML" tag in Google Tag Manager
-Start by navigating to your Google Tag Manager Dashboard.
+Implementing the Narrativ Brand Tag with Google Tag Manager is a simple process. Follow the instructions below
+to implement the tag using a "Custom HTML" tag in GTM.
 
+Start by navigating to your Google Tag Manager Dashboard.
 
 - Select the "Tags" menu item from the menu on the left-hand side of the page.
 - Once on the "Tags" page, select the "New" button to create a new tag.
-- Select the "Tag Configuration" box to begin making a new pixel.
+- Select the "Tag Configuration" box to begin making a new tag.
 
 .. image:: _static/pixel_implementation_screenshots/1_tap_configuration.png
 
-- Select the "Custom HTML" option to open a text field, and copy and paste the above code for the **Page View Tag**. Make sure you replace *"accountname"* with your Narrativ account name.
+- Select the "Custom HTML" option to open an empty text field.
 
 .. image:: _static/pixel_implementation_screenshots/2_choose_custom_html.png
 
-- Enter the code from the "Page View Tag" snippet (See the section before this). Replace the content of ``BAMX_EVENT_DATA`` with the relevant data from your data layer.
+- Copy and paste the code outlined in the above section entitled “Page Impression Events: Implementation”.
+  Make sure you replace `ACCOUNT NAME` with your Narrativ account name.
 
 .. image:: _static/pixel_implementation_screenshots/3_enter_tag_html.png
 
-- Select "All Pages" as the correct trigger for this "Page View Tag."
+- Select "All Pages" as the correct trigger for these events.
 
 .. image:: _static/pixel_implementation_screenshots/4_select_trigger.png
 
-- Name the Tag "Narrativ Page Impression" and double check that the trigger is set to "All Pages"
+- Name the tag "Narrativ Page Impression Events" and double check that the trigger is set to "All Pages".
 
 .. image:: _static/pixel_implementation_screenshots/5_final_product.png
 
-- For the "Check Out Pixel", create a new tag and open the text field.
+- For checkout events, create a new tag and open the empty text field again.
 
 .. image:: _static/pixel_implementation_screenshots/checkout_1_open_editor.png
 
-- This example is using a dummy data layer. You will have to customize "var purchased" to point at how you access the order content in your data layer.
+- Follow the instructions outlined in the “Checkout Events: Implementation” Section above to successfully fire checkout events.
 
 .. image:: _static/pixel_implementation_screenshots/checkout_2_confirm_code_product_info.png
 
-- Add box under "Triggering" to add a trigger for this tag.
+- Select the box under "Triggering" to add a trigger for this tag.
 
 .. image:: _static/pixel_implementation_screenshots/checkout_3_add_trigger.png
 
@@ -255,14 +252,12 @@ Start by navigating to your Google Tag Manager Dashboard.
 
 .. image:: _static/pixel_implementation_screenshots/submit_3_submit_changes.png
 
-- Double check that everything you worked on is in this submission. Name the submission something like "Adding Narrativ Pixel" so that it’s easy to find if you need to go back and debug any issues in the future.
+- Double check that everything you modified is in this submission. Name the submission something like "Adding Narrativ Brand Tag" so that it’s easy to find if you need to go back and debug any issues in the future.
 
 .. image:: _static/pixel_implementation_screenshots/submit_4_title_the_changes.png
 
 
-You did it!!
-
-If you have any issues during this process then reach out to your Narrativ contact or hello@narrativ.com
+If you have any issues during this process then reach out to your Narrativ growth manager or email us at support@narrativ.com.
 
 .. _Google category: https://support.google.com/merchants/answer/6324436?hl=en
 .. _ISO 4217: https://www.iso.org/iso-4217-currency-codes.html
