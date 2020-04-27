@@ -45,7 +45,6 @@ browse the full documentation below:
    :maxdepth: 2
    :caption: Publisher How To
 
-   extensionbasics
    extensionuse
    smartshopbuild
 
