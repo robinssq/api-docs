@@ -4,7 +4,7 @@ Narrativ Brand Tag
 What is it?
 -----------
 
-The Narrativ Brand Tag is a lightweight javascript tag that enables partners maximize their performance
+The Narrativ Brand Tag is a lightweight javascript tag that enables partners to maximize their performance
 and unlock valuable article and product level insights in a customized dashboard.
 Only clients with Narrativ’s Brand Tag can optimize their campaigns by ROAS and see more comprehensive
 metrics like revenue and RPC.
