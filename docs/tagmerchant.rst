@@ -51,9 +51,9 @@ Getting the Narrativ Brand Tag to fire page impression events is a simple proces
 Copy and paste the following Javascript snippet in the HEAD section of all your
 site’s pages *that don’t contain PII*.
 
-* Make sure to replace `ACCOUNT NAME` with your Narrativ account name.
+* Make sure to replace ``ACCOUNT NAME`` with your Narrativ account name.
 
-* Need your Narrativ account name? Reach out to your growth manager or `support@narrativ.com` for assistance.
+* Need your Narrativ account name? Reach out to your growth manager or support@narrativ.com for assistance.
 
 ::
 
@@ -90,59 +90,59 @@ Follow the sample code below, making these changes:
    * - Statement
      - Requirement
 
-   * - `var purchased = <dataLayerProducts>;`
-     - Replace `<dataLayerProducts>` with the list of purchased products in your data layer.
+   * - ``var purchased = <dataLayerProducts>;``
+     - Replace ``<dataLayerProducts>`` with the list of purchased products in your data layer.
        Each item in this list represents attributes of a single purchased product (explained in the following items).
 
-   * - `product_id: purchased[i].<ItemID>,`
-     - Replace `<ItemID>` with the variable name your data layer uses to define item ID, or the unique identifier
-       for the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+   * - ``product_id: purchased[i].<ItemID>,``
+     - Replace ``<ItemID>`` with the variable name your data layer uses to define item ID, or the unique identifier
+       for the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
 
-   * - `product_name: purchased[i].<ItemName>,`
-     - Replace `<ItemName>` with the variable name your data layer uses to define item name, or the name
-       for the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+   * - ``product_name: purchased[i].<ItemName>,``
+     - Replace ``<ItemName>`` with the variable name your data layer uses to define item name, or the name
+       for the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
 
-   * - `product_price: purchased[i].<ItemPrice>,`
-     - Replace `<ItemPrice>` with the variable name your data layer uses to define item price, or the *per-unit price*
-       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+   * - ``product_price: purchased[i].<ItemPrice>,``
+     - Replace ``<ItemPrice>`` with the variable name your data layer uses to define item price, or the *per-unit price*
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
 
-   * - `product_quantity: purchased[i].<ItemQuantity>,`
-     - Replace `<ItemQuantity>` with the variable name your data layer uses to define item quantity, or the quantity
-       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+   * - ``product_quantity: purchased[i].<ItemQuantity>,``
+     - Replace ``<ItemQuantity>`` with the variable name your data layer uses to define item quantity, or the quantity
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
 
-   * - `product_brand: purchased[i].<ItemBrand>,`
-     - Replace `<ItemBrand>` with the variable name your data layer uses to define item brand, or the brand
-       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+   * - ``product_brand: purchased[i].<ItemBrand>,``
+     - Replace ``<ItemBrand>`` with the variable name your data layer uses to define item brand, or the brand
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
 
-       Note: If Item Brand is not available, replace `<ItemBrand>` with `null`
+       Note: If Item Brand is not available, replace ``<ItemBrand>`` with ``null``
 
-   * - `product_size: purchased[i].<ItemSize>,`
-     - Replace `<ItemSize>` with the variable name your data layer uses to define item size, or the size
-       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+   * - ``product_size: purchased[i].<ItemSize>,``
+     - Replace ``<ItemSize>`` with the variable name your data layer uses to define item size, or the size
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
 
-       Note: If Item Size is not available, replace `<ItemSize>` with `null`
+       Note: If Item Size is not available, replace ``<ItemSize>`` with ``null``
 
-   * - `product_color: purchased[i].<ItemColor>,`
-     - Replace `<ItemColor>` with the variable name your data layer uses to define item color, or the color
-       of the purchased product. This can likely be found in the `dataLayerProducts` list described above.
+   * - ``product_color: purchased[i].<ItemColor>,``
+     - Replace ``<ItemColor>`` with the variable name your data layer uses to define item color, or the color
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
 
-       Note: If Item Color is not available, replace `<ItemColor>` with `null`
+       Note: If Item Color is not available, replace ``<ItemColor>`` with ``null``
 
-   * - `orderTotal += (purchased[i].<ItemPrice> * purchased[i].<ItemQuantity>);`
-     - Replace `<ItemPrice>` and `<ItemQuantity>` with the same respective values used above.
+   * - ``orderTotal += (purchased[i].<ItemPrice> * purchased[i].<ItemQuantity>);``
+     - Replace ``<ItemPrice>`` and ``<ItemQuantity>`` with the same respective values used above.
 
-   * - `is_new_visitor: <IsNewVisitor>,`
-     - Replace `<IsNewVisitor>` with a boolean (true/false) indicating if the customer is new to your site.
+   * - ``is_new_visitor: <IsNewVisitor>,``
+     - Replace ``<IsNewVisitor>`` with a boolean (true/false) indicating if the customer is new to your site.
 
-       Note: If this is not available, replace `<RegisteredCustomer>` with `null`
+       Note: If this is not available, replace ``<RegisteredCustomer>`` with ``null``
 
-   * - `order_id: <OrderID>,`
-     - Replace `<OrderID>` with the order ID, a unique identifier for the order.
+   * - ``order_id: <OrderID>,``
+     - Replace ``<OrderID>`` with the order ID, a unique identifier for the order.
 
-   * - `currency: <CurrencyCode>,`
-     - Replace <CurrencyCode> with the three digit currency code that order was placed in (ex: ‘USD’). Uses `ISO 4217`_
+   * - ``currency: <CurrencyCode>,``
+     - Replace ``<CurrencyCode>`` with the three digit currency code that order was placed in (ex: ‘USD’). Uses `ISO 4217`_
 
-**Note:** Remember to also replace `ACCOUNT NAME` with your Narrativ account name.
+**Note:** Remember to also replace ``ACCOUNT NAME`` with your Narrativ account name.
 
 ::
 
@@ -204,7 +204,7 @@ Start by navigating to your Google Tag Manager Dashboard.
 .. image:: _static/pixel_implementation_screenshots/2_choose_custom_html.png
 
 - Copy and paste the code outlined in the above section entitled “Page Impression Events: Implementation”.
-  Make sure you replace `ACCOUNT NAME` with your Narrativ account name.
+  Make sure you replace ``ACCOUNT NAME`` with your Narrativ account name.
 
 .. image:: _static/pixel_implementation_screenshots/3_enter_tag_html.png
 
