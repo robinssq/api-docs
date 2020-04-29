@@ -38,7 +38,7 @@ browse the full documentation below:
 
    tagbasics
    tagpublisher
-   tagmerchant
+   tagbrand
    tagpublishercustom
 
 .. toctree::
