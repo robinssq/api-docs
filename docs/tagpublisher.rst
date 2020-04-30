@@ -26,7 +26,7 @@ Audit Mode Implementation
 Getting the Narrativ tag to successfully run in Audit Mode is a simple process.
 Copy and paste the following Javascript snippet in the HEAD section of all your site's pages.
 
-* Make sure to replace `ACCOUNT NAME` with your Narrativ account name.
+* Make sure to replace ``ACCOUNT NAME`` with your Narrativ account name.
 * Need to know your Narrativ account name? Log into dashboard.narrativ.com and go to `setup`_ to see the snippet
   customized with your account info, or reach out to your account manager for support as needed.
 * See if it's working: There is a checker on your "setup" page where you can insert your site URL to verify if
@@ -61,7 +61,7 @@ Simply remove the following line from the audit tag to enable Active Mode:
 If you aren't currently using the tag in Audit Mode, copy and paste the following Javascript
 snippet in the HEAD section of all your site's pages.
 
-* Make sure to replace `ACCOUNT NAME` with your Narrativ account name.
+* Make sure to replace ``ACCOUNT NAME`` with your Narrativ account name.
 * Need to know your Narrativ account name? Log into dashboard.narrativ.com and go to `setup`_ to see the snippet
   customized with your account info, or reach out to your account manager for support as needed.
 * See if it's working: There is a checker on your "setup" page where you can insert your site URL to verify if
