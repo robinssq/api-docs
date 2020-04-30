@@ -128,7 +128,8 @@ Follow the sample code below, making these changes:
 
        Note: If Item Color is not available, replace ``<ItemColor>`` with ``null``
 
-   * - ``orderTotal += (purchased[i].<ItemPrice> * purchased[i].<ItemQuantity>);``
+   * - ``orderTotal += (purchased[i].<ItemPrice> *``
+       ``purchased[i].<ItemQuantity>);``
      - Replace ``<ItemPrice>`` and ``<ItemQuantity>`` with the same respective values used above.
 
    * - ``is_new_visitor: <IsNewVisitor>,``
