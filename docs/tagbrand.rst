@@ -135,7 +135,7 @@ Follow the sample code below, making these changes:
    * - ``is_new_visitor: <IsNewVisitor>,``
      - Replace ``<IsNewVisitor>`` with a boolean (true/false) indicating if the customer is new to your site.
 
-       Note: If this is not available, replace ``<RegisteredCustomer>`` with ``null``
+       Note: If this is not available, replace ``<IsNewVisitor>`` with ``null``
 
    * - ``order_id: <OrderID>,``
      - Replace ``<OrderID>`` with the order ID, a unique identifier for the order.
