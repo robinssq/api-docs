@@ -34,6 +34,6 @@ Note that doing this will prevent us from being able to optimize your revenue an
 
 4. Create your Link
 ---------------------
-Once you created your Link by adding to existing story or creating a new story, you want to paste the Link into your CMS.
+Once you have created your Link by adding to an existing story or creating a new story, paste the Link into your CMS.
 
 .. image:: _static/extension_instructions/9.png
