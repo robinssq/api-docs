@@ -68,6 +68,6 @@ Copy Existing Links
 
 3. Select any Link to copy to clipboard
 ---------------------------------------
-Once you've copied your Link, you want to paste the Link into your CMS.
+Once you have copied your Link, paste the Link into your CMS.
 
 .. image:: _static/extension_instructions/12.png
