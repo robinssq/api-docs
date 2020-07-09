@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Narrativ API'
-copyright = '2019, The Narrativ Company, Inc.'
+copyright = '2020, The Narrativ Company, Inc.'
 author = 'Narrativ'
 
 # The version info for the project you're documenting, acts as replacement for
