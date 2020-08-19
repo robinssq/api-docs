@@ -41,36 +41,43 @@ Query Params
 --------------------------
 
 .. list-table::
-   :widths: 35 10 55
+   :widths: 25 10 10 55
    :header-rows: 1
 
    * - URL Path Parameter
      - Type
+     - Required
      - Description
 
    * - url
      - string(2048)
-     - The URL of the target link (must be URL encoded!) *Required* without this, users will see an error page
+     - ✔️
+     - The URL of the target product (must be URL encoded!).
 
    * - article_url
      - string(2048)
-     - The URL of the article your link is coming from (must be URL encoded!). *Optional*
+     - ✔️
+     - The URL of the article your link is coming from (must be URL encoded!). We require this to correctly group and monetize links
 
    * - article_name
      - string(100)
-     - The name or title of the article your link is coming from. *Optional* We require either this or `article_url` (or both) to correctly group and monetize links
+     - ✔️
+     - The name or title of the article your link is coming from. We require this to correctly group and monetize links.
 
    * - publisher_slug
      - string(64)
-     - The slug provided by your Narrativ account rep. *Required* Without this we will not know what account to monetize clicks for
+     - ✔️
+     - The slug provided by your Narrativ account rep. Without this we will not know what account to monetize clicks for.
 
    * - exclusive
      - Integer
-     - set this to 1 if you want to ensure that this particular link only goes to the original advertiser *Optional*
+     - ❌
+     - set this to 1 if you want to ensure that this particular link only goes to the original advertiser
 
    * - u1
      - string(2048)
-     - arbitrary tracking parameter that you may apply to links for your own tracking, will be passed to our stats *Optional*
+     - ❌
+     - arbitrary tracking parameter that you may apply to links for your own tracking, will be passed to our stats
 
 
 URL Encoding
