@@ -9,9 +9,8 @@ and unlock valuable article and product level insights in a customized dashboard
 Only clients with Narrativ’s Brand Tag can optimize their campaigns by ROAS and see more comprehensive
 metrics like revenue and RPC.
 
-Plus, brands with the Narrativ Brand Tag will open themselves up to be discovered by editors.
-When it’s on your site, publishers can access top performing SKUs, sales data and new product launches
-to inspire future recommendations.
+Please note: data collection by the brand tag does not contain personally identifiable information (PII)
+and is in compliance with GDPR and CCPA.
 
 
 How it Works
