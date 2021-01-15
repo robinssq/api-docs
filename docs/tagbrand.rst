@@ -204,7 +204,7 @@ Follow the sample code below, making these changes:
     </script>
 
 Shopify Checkout Code
-------------------------------
+---------------------
 
 Please use the script tag below in place of the previous checkout code if you prefer to implement through an
 existing Shopify integration:
@@ -252,13 +252,13 @@ existing Shopify integration:
 **Note:** Remember to also replace ``ACCOUNT NAME`` with your Narrativ account name.
 
 Google Tag Manager Implementation
-------------------------------
+---------------------------------
 
 Implementing the Narrativ Brand Tag with Google Tag Manager is a simple process. Follow the instructions below
 to implement the tag using a "Custom HTML" tag in GTM.
 
 Page Impression Events
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 Start by navigating to your Google Tag Manager Dashboard.
 
