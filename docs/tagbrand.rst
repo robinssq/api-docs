@@ -9,9 +9,8 @@ and unlock valuable article and product level insights in a customized dashboard
 Only clients with Narrativ’s Brand Tag can optimize their campaigns by ROAS and see more comprehensive
 metrics like revenue and RPC.
 
-Plus, brands with the Narrativ Brand Tag will open themselves up to be discovered by editors.
-When it’s on your site, publishers can access top performing SKUs, sales data and new product launches
-to inspire future recommendations.
+Please note: data collection by the brand tag does not contain personally identifiable information (PII)
+and is in compliance with GDPR and CCPA.
 
 
 How it Works
@@ -24,8 +23,6 @@ Page Impressions
 
 Page impression events enable Narrativ to ensure attribution for our partners.
 These events should be fired on every page that doesn’t contain PII.
-
-**Please note:** This data collection does not contain PII and is in compliance with GDPR and CCPA.
 
 Checkouts
 ^^^^^^^^^
@@ -53,7 +50,7 @@ site’s pages *that don’t contain PII*.
 
 * Make sure to replace ``ACCOUNT NAME`` with your Narrativ account name.
 
-* Need your Narrativ account name? Reach out to your growth manager or support@narrativ.com for assistance.
+* Need your Narrativ account name? Reach out to your growth manager or solutions@narrativ.com for assistance.
 
 ::
 
@@ -78,70 +75,91 @@ must be populated with information about the checkout, along with a few details 
 the products purchased. This snippet should be placed on your site’s **Order Confirmation Page**,
 or the page displayed to customers immediately after they’ve *successfully* purchased their items.
 
+
 Make the Checkout Event Code Work for You
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Follow the sample code below, making these changes:
 
 .. list-table::
-   :widths: 40 60
+   :widths: 18 50 14 18
    :header-rows: 1
 
    * - Statement
      - Requirement
+     - Data Type
+     - Notes
 
    * - ``var purchased = <dataLayerProducts>;``
      - Replace ``<dataLayerProducts>`` with the list of purchased products in your data layer.
-       Each item in this list represents attributes of a single purchased product (explained in the following items).
+       Each item in this array represents attributes of a single purchased product (explained in the following items).
+     - Object
+     -
 
    * - ``product_id: purchased[i].<ItemID>,``
      - Replace ``<ItemID>`` with the variable name your data layer uses to define item ID, or the unique identifier
-       for the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
+       for the purchased product. This can likely be found in the ``dataLayerProducts`` array described above.
+     - String
+     -
 
    * - ``product_name: purchased[i].<ItemName>,``
      - Replace ``<ItemName>`` with the variable name your data layer uses to define item name, or the name
-       for the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
+       for the purchased product. This can likely be found in the ``dataLayerProducts`` array described above.
+     - String
+     -
 
    * - ``product_price: purchased[i].<ItemPrice>,``
      - Replace ``<ItemPrice>`` with the variable name your data layer uses to define item price, or the *per-unit price*
-       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` array described above.
+     - String
+     - Both cart level and product level coupon codes should be captured in this variable (e.g. if a coupon code
+       variable in the data layer is not null, apply X% discount to product_price)
 
    * - ``product_quantity: purchased[i].<ItemQuantity>,``
      - Replace ``<ItemQuantity>`` with the variable name your data layer uses to define item quantity, or the quantity
-       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` array described above.
+     - Integer
+     -
 
    * - ``product_brand: purchased[i].<ItemBrand>,``
      - Replace ``<ItemBrand>`` with the variable name your data layer uses to define item brand, or the brand
-       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
-
-       Note: If Item Brand is not available, replace ``<ItemBrand>`` with ``null``
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` array described above.
+     - String
+     - If Item Brand is not available, replace ``<ItemBrand>`` with ``null``
 
    * - ``product_size: purchased[i].<ItemSize>,``
      - Replace ``<ItemSize>`` with the variable name your data layer uses to define item size, or the size
-       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
-
-       Note: If Item Size is not available, replace ``<ItemSize>`` with ``null``
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` array described above.
+     - String
+     - If Item Size is not available, replace ``<ItemSize>`` with ``null``
 
    * - ``product_color: purchased[i].<ItemColor>,``
      - Replace ``<ItemColor>`` with the variable name your data layer uses to define item color, or the color
-       of the purchased product. This can likely be found in the ``dataLayerProducts`` list described above.
-
-       Note: If Item Color is not available, replace ``<ItemColor>`` with ``null``
+       of the purchased product. This can likely be found in the ``dataLayerProducts`` array described above.
+     - String
+     - If Item Color is not available, replace ``<ItemColor>`` with ``null``
 
    * - ``orderTotal += (purchased[i].<ItemPrice> *``
        ``purchased[i].<ItemQuantity>);``
      - Replace ``<ItemPrice>`` and ``<ItemQuantity>`` with the same respective values used above.
+     - String
+     -
 
    * - ``is_new_visitor: <IsNewVisitor>,``
      - Replace ``<IsNewVisitor>`` with a boolean (true/false) indicating if the customer is new to your site.
-
-       Note: If this is not available, replace ``<IsNewVisitor>`` with ``null``
+     - Boolean
+     - If this is not available, replace ``<IsNewVisitor>`` with ``null``
 
    * - ``order_id: <OrderID>,``
      - Replace ``<OrderID>`` with the order ID, a unique identifier for the order.
+     - String
+     -
 
    * - ``currency: <CurrencyCode>,``
-     - Replace ``<CurrencyCode>`` with the three digit currency code that order was placed in (ex: ‘USD’). Uses `ISO 4217`_
+     - Replace ``<CurrencyCode>`` with the three digit currency code that order was placed in (ex: ‘USD’).
+       Uses `ISO 4217`_
+     - String
+     -
 
 **Note:** Remember to also replace ``ACCOUNT NAME`` with your Narrativ account name.
 
@@ -185,12 +203,62 @@ Follow the sample code below, making these changes:
         }("ACCOUNT NAME"));
     </script>
 
+Shopify Checkout Code
+---------------------
 
-Google Tag Manager Walkthrough
-------------------------------
+Please use the script tag below in place of the previous checkout code if you prefer to implement through an
+existing Shopify integration:
+
+::
+
+    <script type="text/javascript">
+        if(Shopify.Checkout.step == ‘thank_you’){
+            var productsPurchased = [
+	            {% for line_item in checkout.line_items %}
+	            {% if line_item.price > 0 %}
+	            {
+	                “product_id” : “{{ line_item.product_id }}”,
+                    “product_name” : “{{ line_item.product_title | capitalize }} {% if
+                    line_item.product.metafields.c_f.tagline %}
+                    {{ line_item.product_metafields.c_f.tagline }}{% endif %}”,
+	                "product_brand":"{{ line_item.product.vendor }}",
+	                "product_size":"{{ line_item.variant.option1 }}",
+	                "product_price" : "{{ line_item.price | money_without_currency }}",
+	                "product_quantity" : "{{ line_item.quantity }}", },
+	            {% endif %}
+            {% endfor %} ];
+
+        window.BAMX_EVENT_DATA = {
+	        "page_type": “checkout”,
+            "is_new_visitor": "{{customer.has_account}}",
+            "products_purchased": productsPurchased,
+            "order_id": Shopify.checkout.order_id.toString() || "{{order_number}}",
+            "order_value": Shopify.checkout.subtotal_price || "{{subtotal_price | money_without_currency }}",
+            "currency": Shopify.checkout.currency || "{{currency.iso_code}}",
+        };
+
+        (function(account) {
+            try {
+              var b = document.createElement("script");
+              b.type = "text/javascript";
+              b.src = "https://static.narrativ.com/tags/" + account + ".js";
+              b.async = true;
+              var a = document.getElementsByTagName("script")[0];
+              a.parentNode.insertBefore(b, a);
+            } catch (e) {}
+        }("ACCOUNT NAME"));
+    </script>
+
+**Note:** Remember to also replace ``ACCOUNT NAME`` with your Narrativ account name.
+
+Google Tag Manager Implementation
+---------------------------------
 
 Implementing the Narrativ Brand Tag with Google Tag Manager is a simple process. Follow the instructions below
 to implement the tag using a "Custom HTML" tag in GTM.
+
+Page Impression Events
+^^^^^^^^^^^^^^^^^^^^^^
 
 Start by navigating to your Google Tag Manager Dashboard.
 
@@ -217,12 +285,21 @@ Start by navigating to your Google Tag Manager Dashboard.
 
 .. image:: _static/pixel_implementation_screenshots/5_final_product.png
 
+Checkout Events
+^^^^^^^^^^^^^^^
+
 - For checkout events, create a new tag and open the empty text field again.
 
 .. image:: _static/pixel_implementation_screenshots/checkout_1_open_editor.png
 
 - Follow the instructions outlined in the “Checkout Events: Implementation” Section above to successfully fire checkout events.
 
+**Note:** ``var purchased`` should be set to the data layer variable corresponding to products purchased at checkout.
+This can be defined independent of GTM variables (see previous screenshot), or it can be found in the
+Variables section of your Tag Manager dashboard
+GTM variables referenced in the checkout tag should be wrapped in doubly curly brackets.
+
+Here is an example of the fully implemented checkout code:
 .. image:: _static/pixel_implementation_screenshots/checkout_2_confirm_code_product_info.png
 
 - Select the box under "Triggering" to add a trigger for this tag.
@@ -241,6 +318,9 @@ Start by navigating to your Google Tag Manager Dashboard.
 
 .. image:: _static/pixel_implementation_screenshots/checkout_5_double_check.png
 
+Publishing Tags
+^^^^^^^^^^^^^^^
+
 - Make sure that the tag(s) are showing up in the "Tag" tab.
 
 .. image:: _static/pixel_implementation_screenshots/submit_1_tag_confirmation.png
@@ -257,8 +337,7 @@ Start by navigating to your Google Tag Manager Dashboard.
 
 .. image:: _static/pixel_implementation_screenshots/submit_4_title_the_changes.png
 
-
-If you have any issues during this process then reach out to your Narrativ growth manager or email us at support@narrativ.com.
+If you have any issues during this process then reach out to your Narrativ growth manager or email us at solutions@narrativ.com.
 
 .. _Google category: https://support.google.com/merchants/answer/6324436?hl=en
 .. _ISO 4217: https://www.iso.org/iso-4217-currency-codes.html
