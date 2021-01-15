@@ -82,7 +82,7 @@ Make the Checkout Event Code Work for You
 Follow the sample code below, making these changes:
 
 .. list-table::
-   :widths: 40 60
+   :widths: 20 50 15 15
    :header-rows: 1
 
    * - Statement
