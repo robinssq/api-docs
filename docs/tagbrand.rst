@@ -9,7 +9,7 @@ and unlock valuable article and product level insights in a customized dashboard
 Only clients with Narrativ’s Brand Tag can optimize their campaigns by ROAS and see more comprehensive
 metrics like revenue and RPC.
 
-Please note: data collection by the brand tag does not contain personally identifiable information (PII)
+**Please note:** data collection by the brand tag does not contain personally identifiable information (PII)
 and is in compliance with GDPR and CCPA.
 
 
@@ -82,7 +82,7 @@ Make the Checkout Event Code Work for You
 Follow the sample code below, making these changes:
 
 .. list-table::
-   :widths: 18 50 14 18
+   :widths: 15 53 14 18
    :header-rows: 1
 
    * - Statement
@@ -338,6 +338,36 @@ Publishing Tags
 .. image:: _static/pixel_implementation_screenshots/submit_4_title_the_changes.png
 
 If you have any issues during this process then reach out to your Narrativ growth manager or email us at solutions@narrativ.com.
+
+Testing the Brand Tag
+---------------------
+
+Page Impressions
+^^^^^^^^^^^^^^^^
+
+To test the page impression code, filter “bam” in Developer Tools and check for these three events on refresh:
+
+.. image:: _static/pixel_implementation_screenshots/test_page_impression.png
+
+Checkouts
+^^^^^^^^^
+
+Place a test order to QA the checkout tag. Similar to the page impression test, be sure to have “bam” filtered in
+Developer Tools *before* you place the order. On the confirmation page, you should see an additional checkout
+event firing:
+
+.. image:: _static/pixel_implementation_screenshots/test_checkouts.png
+
+When you navigate into the “Request Payload” within the checkout event, you should see information about the order
+and products purchased:
+
+.. image:: _static/pixel_implementation_screenshots/test_checkouts_payload.png
+
+**Please note:** We recommend placing an additional test order with a coupon code to ensure order value and product
+price variables accurately capture any discounts.
+
+If you have any issues during the implementation or testing process, please reach out to your Narrativ growth manager
+or email us at solutions@narrativ.com.
 
 .. _Google category: https://support.google.com/merchants/answer/6324436?hl=en
 .. _ISO 4217: https://www.iso.org/iso-4217-currency-codes.html
