@@ -82,7 +82,7 @@ Make the Checkout Event Code Work for You
 Follow the sample code below, making these changes:
 
 .. list-table::
-   :widths: 15 53 14 18
+   :widths: 11 57 14 18
    :header-rows: 1
 
    * - Statement
@@ -300,6 +300,7 @@ Variables section of your Tag Manager dashboard
 GTM variables referenced in the checkout tag should be wrapped in doubly curly brackets.
 
 Here is an example of the fully implemented checkout code:
+
 .. image:: _static/pixel_implementation_screenshots/checkout_2_confirm_code_product_info.png
 
 - Select the box under "Triggering" to add a trigger for this tag.
