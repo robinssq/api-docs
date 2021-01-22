@@ -32,7 +32,7 @@ the link will just be redirected to the original URL.
 
 The ideal usage for this is to set up a programmatic integration--either wrap all commerce links
 on your site or all of the ones you want Narrativ to monetize. Our system will make sure that
-your readers get to the appropriate destination while finding you all the best monetezation opportunities.
+your readers get to the appropriate destination while finding you all the best monetization opportunities.
 If the wrapping happens server side by your CMS, this will even work in no-javascript or ad-blocked
 environments like AMP.
 
@@ -50,27 +50,27 @@ Query Params
 
    * - url
      - string(2048)
-     - The URL of the target link (must be URL encoded!) *Required* without this, users will see an error page
+     - *Required* The URL of the target link (must be URL encoded!). Without this, users will see an error page
 
    * - article_url
      - string(2048)
-     - The URL of the article your link is coming from (must be URL encoded!). *Optional*
+     - *Required* The canonical URL of the article your link is coming from (must be URL encoded!).
 
    * - article_name
      - string(100)
-     - The name or title of the article your link is coming from. *Optional* We require either this or `article_url` (or both) to correctly group and monetize links
+     - *Required* The readable name or title of the article your link is coming from (not a numeric identifier).
 
    * - publisher_slug
      - string(64)
-     - The slug provided by your Narrativ account rep. *Required* Without this we will not know what account to monetize clicks for
+     - *Required* The slug provided by your Narrativ account rep. Without this we will not know what account to monetize clicks for.
 
    * - exclusive
      - Integer
-     - set this to 1 if you want to ensure that this particular link only goes to the original advertiser *Optional*
+     - *Optional* Set this to 1 if you want to ensure that this particular link only goes to the original retailer.
 
    * - u1
      - string(2048)
-     - arbitrary tracking parameter that you may apply to links for your own tracking, will be passed to our stats *Optional*
+     - *Optional* Arbitrary tracking parameter that you may apply to links for your own tracking (will be passed to our stats).
 
 
 URL Encoding
