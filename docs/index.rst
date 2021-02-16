@@ -27,6 +27,7 @@ browse the full documentation below:
    smartlink
    clickmate
    productapi
+   merchantfeeds
    auction
    amp
    events
