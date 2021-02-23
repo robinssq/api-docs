@@ -96,7 +96,6 @@ only include products that are in-stock at time of file generation.
      - String
      - Product page URL
 
-
 Feed Delivery
 -------------
 
@@ -114,16 +113,18 @@ access key. Credentials will be shared in a 1pass vault for security purposes.
 **SFTP:**
 Feeds will be delivered to publisher’s SFTP location.
 
+Configuring the URLs
+____________________
 
-Monetization
-____________
+Product URLs contained in feed must be wrapped in our click wrapper (`Clickmate`_) before publishing to the site.
+This ensures the link is properly monetized with Narrativ tracking appended on click.
 
-Product URLs contained in feed are not formatted for Narrativ monetization. There are two available methods to
-monetize the product URLs:
+Publisher JS Tag
+________________
 
-    1. `Clickmate`_
-    2. `Publisher JS Tag`_
-
+It is recommended to add our `Publisher JS Tag`_ for this integration method. The JSTag allows for real-time
+optimization utilizing dynamic links and dynamic button displays as detailed in the linked documentation page.
+Additionally, the JS Tag unlocks higher rates by enabling impressions tracking and post-impression attribution.
 
 Getting Started
 _______________
