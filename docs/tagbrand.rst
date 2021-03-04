@@ -82,7 +82,7 @@ Make the Checkout Event Code Work for You
 Follow the sample code below, making these changes:
 
 .. list-table::
-   :widths: 11 57 14 18
+   :widths: 8 60 14 18
    :header-rows: 1
 
    * - Statement
@@ -145,10 +145,10 @@ Follow the sample code below, making these changes:
      - String
      -
 
-   * - ``is_new_visitor: <IsNewVisitor>,``
-     - Replace ``<IsNewVisitor>`` with a boolean (true/false) indicating if the customer is new to your site.
+   * - ``is_new_customer: <isNewCustomer>,``
+     - Replace ``<isNewCustomer>`` with a boolean (true/false) indicating if Order is First Order
      - Boolean
-     - If this is not available, replace ``<IsNewVisitor>`` with ``null``
+     - If field is not available, replace ``<isNewCustomer>`` with ``null``
 
    * - ``order_id: <OrderID>,``
      - Replace ``<OrderID>`` with the order ID, a unique identifier for the order.
@@ -184,7 +184,7 @@ Follow the sample code below, making these changes:
 
         window.BAMX_EVENT_DATA = {
             page_type: 'checkout',
-            is_new_visitor: <IsNewVisitor>,
+            is_new_customer: <isNewCustomer>,
             products_purchased: productsPurchased,
             order_id: <OrderID>,
             order_value: orderTotal,
@@ -214,10 +214,10 @@ existing Shopify integration:
     <script type="text/javascript">
         if(Shopify.Checkout.step == ‘thank_you’){
             var productsPurchased = [
-	            {% for line_item in checkout.line_items %}
-	            {% if line_item.price > 0 %}
-	            {
-	                “product_id” : “{{ line_item.product_id }}”,
+                {% for line_item in checkout.line_items %}
+                {% if line_item.price > 0 %}
+                {
+                    “product_id” : “{{ line_item.product_id }}”,
                     “product_name” : “{{ line_item.product_title | capitalize }} {% if
                     line_item.product.metafields.c_f.tagline %}
                     {{ line_item.product_metafields.c_f.tagline }}{% endif %}”,
@@ -225,14 +225,13 @@ existing Shopify integration:
 	                "product_size":"{{ line_item.variant.option1 }}",
 	                "product_price" : "{{ line_item.price | money_without_currency }}",
 	                "product_quantity" : "{{ line_item.quantity }}", },
-	            {% endif %}
+                {% endif %}
             {% endfor %} ];
 
         window.BAMX_EVENT_DATA = {
-	        "page_type": “checkout”,
-            "is_new_visitor": "{{customer.has_account}}",
-            "products_purchased": productsPurchased,
+            "page_type": “checkout”,
             "order_id": Shopify.checkout.order_id.toString() || "{{order_number}}",
+            "products_purchased": productsPurchased,
             "order_value": Shopify.checkout.subtotal_price || "{{subtotal_price | money_without_currency }}",
             "currency": Shopify.checkout.currency || "{{currency.iso_code}}",
         };
