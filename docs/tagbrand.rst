@@ -82,7 +82,7 @@ Make the Checkout Event Code Work for You
 Follow the sample code below, making these changes:
 
 .. list-table::
-   :widths: 11 57 14 18
+   :widths: 8 60 14 18
    :header-rows: 1
 
    * - Statement
@@ -145,10 +145,10 @@ Follow the sample code below, making these changes:
      - String
      -
 
-   * - ``is_new_visitor: <IsNewVisitor>,``
-     - Replace ``<IsNewVisitor>`` with a boolean (true/false) indicating if the customer is new to your site.
+   * - ``is_new_customer: <is_new_customer>,``
+     - Replace ``<is_new_customer>`` with a boolean (true/false) indicating if Order is First Order
      - Boolean
-     - If this is not available, replace ``<IsNewVisitor>`` with ``null``
+     - If field is not available, replace ``<is_new_customer>`` with ``null``
 
    * - ``order_id: <OrderID>,``
      - Replace ``<OrderID>`` with the order ID, a unique identifier for the order.
@@ -184,7 +184,7 @@ Follow the sample code below, making these changes:
 
         window.BAMX_EVENT_DATA = {
             page_type: 'checkout',
-            is_new_visitor: <IsNewVisitor>,
+            is_new_customer: <is_new_customer>,
             products_purchased: productsPurchased,
             order_id: <OrderID>,
             order_value: orderTotal,
@@ -230,9 +230,8 @@ existing Shopify integration:
 
         window.BAMX_EVENT_DATA = {
 	        "page_type": “checkout”,
-            "is_new_visitor": "{{customer.has_account}}",
-            "products_purchased": productsPurchased,
             "order_id": Shopify.checkout.order_id.toString() || "{{order_number}}",
+            "products_purchased": productsPurchased,
             "order_value": Shopify.checkout.subtotal_price || "{{subtotal_price | money_without_currency }}",
             "currency": Shopify.checkout.currency || "{{currency.iso_code}}",
         };
