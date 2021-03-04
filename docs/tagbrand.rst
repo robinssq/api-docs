@@ -145,10 +145,10 @@ Follow the sample code below, making these changes:
      - String
      -
 
-   * - ``is_new_customer: <is_new_customer>,``
-     - Replace ``<is_new_customer>`` with a boolean (true/false) indicating if Order is First Order
+   * - ``is_new_customer: <isNewCustomer>,``
+     - Replace ``<isNewCustomer>`` with a boolean (true/false) indicating if Order is First Order
      - Boolean
-     - If field is not available, replace ``<is_new_customer>`` with ``null``
+     - If field is not available, replace ``<isNewCustomer>`` with ``null``
 
    * - ``order_id: <OrderID>,``
      - Replace ``<OrderID>`` with the order ID, a unique identifier for the order.
@@ -184,7 +184,7 @@ Follow the sample code below, making these changes:
 
         window.BAMX_EVENT_DATA = {
             page_type: 'checkout',
-            is_new_customer: <is_new_customer>,
+            is_new_customer: <isNewCustomer>,
             products_purchased: productsPurchased,
             order_id: <OrderID>,
             order_value: orderTotal,
@@ -214,10 +214,10 @@ existing Shopify integration:
     <script type="text/javascript">
         if(Shopify.Checkout.step == ‘thank_you’){
             var productsPurchased = [
-	            {% for line_item in checkout.line_items %}
-	            {% if line_item.price > 0 %}
-	            {
-	                “product_id” : “{{ line_item.product_id }}”,
+                {% for line_item in checkout.line_items %}
+                {% if line_item.price > 0 %}
+                {
+                    “product_id” : “{{ line_item.product_id }}”,
                     “product_name” : “{{ line_item.product_title | capitalize }} {% if
                     line_item.product.metafields.c_f.tagline %}
                     {{ line_item.product_metafields.c_f.tagline }}{% endif %}”,
@@ -225,11 +225,11 @@ existing Shopify integration:
 	                "product_size":"{{ line_item.variant.option1 }}",
 	                "product_price" : "{{ line_item.price | money_without_currency }}",
 	                "product_quantity" : "{{ line_item.quantity }}", },
-	            {% endif %}
+                {% endif %}
             {% endfor %} ];
 
         window.BAMX_EVENT_DATA = {
-	        "page_type": “checkout”,
+            "page_type": “checkout”,
             "order_id": Shopify.checkout.order_id.toString() || "{{order_number}}",
             "products_purchased": productsPurchased,
             "order_value": Shopify.checkout.subtotal_price || "{{subtotal_price | money_without_currency }}",
