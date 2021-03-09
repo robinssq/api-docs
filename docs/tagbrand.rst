@@ -148,7 +148,7 @@ Follow the sample code below, making these changes:
    * - ``is_new_customer: <isNewCustomer>,``
      - Replace ``<isNewCustomer>`` with a boolean (true/false) indicating if Order is First Order
      - Boolean
-     - If field is not available, replace ``<isNewCustomer>`` with ``null``
+     - If field is not available, replace ``<isNewCustomer>`` with ``null``.
 
    * - ``order_id: <OrderID>,``
      - Replace ``<OrderID>`` with the order ID, a unique identifier for the order.
