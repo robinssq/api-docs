@@ -54,6 +54,6 @@ or on http://docs.narrativ.com/
 
 ## Releasing a New Version
 
-Update the version number in `docs/conf.py` with the version you will be publishing. Make sure after you merge your PR you create a release with the same version. See https://bamerati.atlassian.net/wiki/spaces/BI/pages/127434762/Public+API+Docs+Workflow for all steps to merge.
+Update the version number in `docs/conf.py` with the version you will be publishing. Make sure after you merge your PR you create a release with the same version. See https://bamerati.atlassian.net/wiki/spaces/BI/pages/1466040336/Public+API+Docs for all steps to merge.
 
 Releases are managed using Github tags. Use semantic versioning.
