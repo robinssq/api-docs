@@ -185,4 +185,4 @@ texinfo_documents = [
 # Custom CSS must be loaded using an extension module.
 # https://github.com/rtfd/readthedocs.org/issues/2116
 def setup(app):
-    app.add_stylesheet('override.css')
+    app.add_css_file('override.css')
