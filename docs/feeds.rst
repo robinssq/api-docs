@@ -9,6 +9,9 @@ comprehensive product feed. Depending on your preference, we can either fetch yo
 HTTP, FTP or SFTP using the specifications detailed below. Feeds sent via FTP or SFTP should be scheduled for daily
 export.
 
+Narrativ recommends following Google's Product Data Specification for all new merchants to ensure a successful integration
+occurs in a timely manner. Google's Product Data Specification can be found [here](https://support.google.com/merchants/answer/7052112?hl=en). 
+
 Formatting
 ----------
 
